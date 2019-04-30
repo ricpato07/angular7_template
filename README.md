@@ -4,6 +4,8 @@ Template for Angular 7
 * tomar variables de archivo de enviroments
 * crear otro archivo de enviroments
 *  @ViewChild
+* create Modules
+* formularios con input y output
 
 
 Paquetes para visual studio code
