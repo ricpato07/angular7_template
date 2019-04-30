@@ -3,6 +3,7 @@ Template for Angular 7
 
 * tomar variables de archivo de enviroments
 * crear otro archivo de enviroments
+*  @ViewChild
 
 
 Paquetes para visual studio code
