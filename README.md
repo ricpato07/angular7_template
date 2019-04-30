@@ -1,6 +1,10 @@
 # angular7_template
 Template for Angular 7
 
+* tomar variables de archivo de enviroments
+* crear otro archivo de enviroments
+
+
 Paquetes para visual studio code
 -Terminal - Jun Han
 -Angular 7 Snippets - Mikael Morlund
