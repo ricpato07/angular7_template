@@ -7,6 +7,7 @@ Template for Angular 7
 * formularios con input y output
 - local storage
 - logger for angular 7
+- server apache local
 
 Revisar:
 * Importación de archivos css
@@ -80,6 +81,9 @@ npm set audit false
 
 //compilar para producción
 ng build --prod
+
+//compilar para QA, es necesario agregar la configuración en angular.json y el archivo enviroment.qa.ts
+ng build --configuration qa
 
 // Segundo curso *******************************************************
 //instalar typescript
