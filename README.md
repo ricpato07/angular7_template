@@ -1,11 +1,17 @@
 # angular7_template
 Template for Angular 7
 
-* tomar variables de archivo de enviroments
-* crear otro archivo de enviroments
-*  @ViewChild
+* tomar variables de archivo en ruta definida
+- @ViewChild
 * create Modules
 * formularios con input y output
+- local storage
+- logger for angular 7
+
+Revisar:
+* Importación de archivos css
+* Nombre del campo utilizando #
+* Uso de interfaces
 
 
 Paquetes para visual studio code
@@ -61,6 +67,9 @@ ng g c core/navigator/header --flat
 
 //crea un modulo y html llamado home con su propio enrutamiento
 ng g m home --routing true
+
+//crea un nuevo servicio: EnvService , env.service.ts
+ng g s env
 
 //arreglar problemas de vulnerability
 npm install -g npm@latest 
@@ -196,4 +205,10 @@ getProductos(){
 
 //botón submit
 <input type="submit" value="{{titulo}}" [disabled]="!formProducto.form.valid" class="btn btn-success"/>
+
+@ViewChild()
+https://www.concretepage.com/angular-2/angular-2-viewchild-example
+
+get JS file
+https://www.truecodex.com/course/angular-6/how-to-use-external-js-files-and-javascript-code-in-angular
 
