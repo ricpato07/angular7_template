@@ -224,3 +224,8 @@ https://www.concretepage.com/angular-2/angular-2-viewchild-example
 get JS file
 https://www.truecodex.com/course/angular-6/how-to-use-external-js-files-and-javascript-code-in-angular
 
+read enviroment files
+https://medium.com/@balramchavan/configure-and-build-angular-application-for-different-environments-7e94a3c0af23
+
+Local server http
+https://www.npmjs.com/package/local-web-server
