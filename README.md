@@ -1,24 +1,13 @@
 # angular7_template
 Template for Angular 7
 
-* tomar variables de archivo en ruta definida
-- @ViewChild
-* create Modules
+* create Modules, importar componentes
 * formularios con input y output
 - local storage
 - logger for angular 7
-- server apache local
-http server
-
-Revisar:
 * Importación de archivos css
 * Nombre del campo utilizando #
-* Uso de interfaces
-heroe: Heroe = {
-    name: '',
-    company: 'Marvel',
-    bio: ''
-  };
+
 
 
 https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios-ajax-rest/
