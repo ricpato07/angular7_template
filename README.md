@@ -8,12 +8,20 @@ Template for Angular 7
 - local storage
 - logger for angular 7
 - server apache local
+http server
 
 Revisar:
 * Importación de archivos css
 * Nombre del campo utilizando #
 * Uso de interfaces
+heroe: Heroe = {
+    name: '',
+    company: 'Marvel',
+    bio: ''
+  };
 
+
+https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios-ajax-rest/
 
 Paquetes para visual studio code
 -Terminal - Jun Han
