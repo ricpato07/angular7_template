@@ -5,10 +5,10 @@ Template for Angular 7
 - Importar en otro módulo componentes, saca errores de maxlenght
 - Revisar ruta componentes en app
   11-crud/src/app/
-- logger for angular 7
+- Generar servicio de Logger
 
 * Importación de archivos css
-<link rel="stylesheet" href="./assets/styles.css">
+-- <link rel="stylesheet" href="./assets/styles.css">
 
 
 
