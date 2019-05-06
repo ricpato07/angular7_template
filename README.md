@@ -6,6 +6,7 @@ Template for Angular 7
 - Revisar ruta componentes en app
   11-crud/src/app/
 - Generar servicio de Logger
+- Constantes en Angular 7
 
 * Importación de archivos css
 -- <link rel="stylesheet" href="./assets/styles.css">
