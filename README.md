@@ -8,6 +8,8 @@ Template for Angular 7
 * Importación de archivos css
 <link rel="stylesheet" href="./assets/styles.css">
 * Nombre del campo utilizando #
+Editor de archivo .md en ventana simultanea
+Ctrl+K V
 
 
 
