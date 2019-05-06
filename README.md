@@ -1,9 +1,8 @@
 # angular7_template
 Template for Angular 7
 
-* create Modules, importar componentes
+## Puntos pendientes a revisar
 * formularios con input y output
-- local storage
 - logger for angular 7
 * Importación de archivos css
 <link rel="stylesheet" href="./assets/styles.css">
@@ -11,7 +10,8 @@ Template for Angular 7
 Editor de archivo .md en ventana simultanea
 Ctrl+K V
 
-
+Revisar ruta componentes en app
+11-crud/src/app/
 
 https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios-ajax-rest/
 
