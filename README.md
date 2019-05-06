@@ -6,6 +6,7 @@ Template for Angular 7
 - local storage
 - logger for angular 7
 * Importación de archivos css
+<link rel="stylesheet" href="./assets/styles.css">
 * Nombre del campo utilizando #
 
 
