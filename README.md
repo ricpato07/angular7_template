@@ -141,6 +141,9 @@ https://www.npmjs.com/package/local-web-server
 
 https://medium.com/@tomastrajan/total-guide-to-angular-6-dependency-injection-providedin-vs-providers-85b7a347b59f
 
+**Importar componentes dentro de módulos**
+https://desarrolloweb.com/articulos/trabajar-modulos-angular.html
+
 // **Componentes ********************************************************
 //parametros opcionales , no pueden venir los parametros opcionales al principio
 ejecuta(nombre:string="Nombre por defecto", apellidos:string, edad?:number)
