@@ -2,19 +2,18 @@
 Template for Angular 7
 
 ### Puntos pendientes a revisar
-- [] Importar en otro módulo componentes, saca errores de maxlenght
-- [] Revisar ruta componentes en app
+[ ] Importar en otro módulo componentes, saca errores de maxlenght
+[ ] Revisar ruta componentes en app
   11-crud/src/app/
--[] Generar servicio de Logger
--[] Constantes en Angular 7
+[ ] Generar servicio de Logger
+[ ] Constantes en Angular 7
 
 
 * Importación de archivos css
+
 `<link rel="stylesheet" href="./assets/styles.css">`
 
-
-
-
+Servicios HttpClient
 https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios-ajax-rest/
 
 ## Paquetes para visual studio code
@@ -27,7 +26,7 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 
 ### Instrucciones para consola
 
-** Instalar angular cli globalmente**
+**Instalar angular cli globalmente**
 
  `npm install -g @angular/cli@latest`
 
@@ -36,8 +35,8 @@ desinstalar angularcli y borrar cache
 `$ npm uninstall -g @angular/cli
 $ npm cache clean`
 
-//instalar libreria http de angular 
-npm install --save @angular/http
+Instalar libreria http de angular 
+`npm install --save @angular/http`
 
 //instalar paquete para desarrollo
 npm install --save-dev karma
