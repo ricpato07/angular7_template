@@ -119,6 +119,8 @@ tsc --version
 //instalar ionic
 npm install -g ionic 
 
+##Enlaces
+
 **@ViewChild()**
 
 https://www.concretepage.com/angular-2/angular-2-viewchild-example
