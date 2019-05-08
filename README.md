@@ -2,8 +2,8 @@
 Template for Angular 7
 
 ### Puntos pendientes a revisar
--[] Importar en otro módulo componentes, saca errores de maxlenght
--[] Revisar ruta componentes en app
+- [] Importar en otro módulo componentes, saca errores de maxlenght
+- [] Revisar ruta componentes en app
   11-crud/src/app/
 -[] Generar servicio de Logger
 -[] Constantes en Angular 7
@@ -27,7 +27,7 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 
 ### Instrucciones para consola
 
-> instalar angular cli globalmente
+** Instalar angular cli globalmente**
 
  `npm install -g @angular/cli@latest`
 
