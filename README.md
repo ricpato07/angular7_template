@@ -119,6 +119,21 @@ tsc --version
 //instalar ionic
 npm install -g ionic 
 
+@ViewChild()
+[https://www.concretepage.com/angular-2/angular-2-viewchild-example]
+
+get JS file
+https://www.truecodex.com/course/angular-6/how-to-use-external-js-files-and-javascript-code-in-angular
+
+read enviroment files
+https://medium.com/@balramchavan/configure-and-build-angular-application-for-different-environments-7e94a3c0af23
+
+Local server http
+https://www.npmjs.com/package/local-web-server
+
+Injection dependency
+https://medium.com/@tomastrajan/total-guide-to-angular-6-dependency-injection-providedin-vs-providers-85b7a347b59f
+
 // **Componentes ********************************************************
 //parametros opcionales , no pueden venir los parametros opcionales al principio
 ejecuta(nombre:string="Nombre por defecto", apellidos:string, edad?:number)
@@ -234,17 +249,4 @@ getProductos(){
 //botón submit
 <input type="submit" value="{{titulo}}" [disabled]="!formProducto.form.valid" class="btn btn-success"/>
 
-@ViewChild()
-https://www.concretepage.com/angular-2/angular-2-viewchild-example
 
-get JS file
-https://www.truecodex.com/course/angular-6/how-to-use-external-js-files-and-javascript-code-in-angular
-
-read enviroment files
-https://medium.com/@balramchavan/configure-and-build-angular-application-for-different-environments-7e94a3c0af23
-
-Local server http
-https://www.npmjs.com/package/local-web-server
-
-Injection dependency
-https://medium.com/@tomastrajan/total-guide-to-angular-6-dependency-injection-providedin-vs-providers-85b7a347b59f
