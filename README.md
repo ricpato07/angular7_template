@@ -2,11 +2,11 @@
 Template for Angular 7
 
 ### Puntos pendientes a revisar
-[ ] Importar en otro módulo componentes, saca errores de maxlenght
-[ ] Revisar ruta componentes en app
+- [ ] Importar en otro módulo componentes, saca errores de maxlenght
+- [ ] Revisar ruta componentes en app
   11-crud/src/app/
-[ ] Generar servicio de Logger
-[ ] Constantes en Angular 7
+- [ ] Generar servicio de Logger
+- [ ] Constantes en Angular 7
 
 
 * Importación de archivos css
@@ -14,6 +14,7 @@ Template for Angular 7
 `<link rel="stylesheet" href="./assets/styles.css">`
 
 Servicios HttpClient
+
 https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios-ajax-rest/
 
 ## Paquetes para visual studio code
@@ -26,68 +27,67 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 
 ## Instrucciones para consola
 
-**Instalar angular cli globalmente**
-
+Instalar angular cli globalmente
  `npm install -g @angular/cli@latest`
 
-desinstalar angularcli y borrar cache
-
+Desinstalar angularcli y borrar cache
 `$ npm uninstall -g @angular/cli
 $ npm cache clean`
 
 Instalar libreria http de angular 
 `npm install --save @angular/http`
 
-//instalar paquete para desarrollo
-npm install --save-dev karma
+Instalar paquete para desarrollo
+`npm install --save-dev karma`
 
-//desinstalar libreria 
-npm uninstall --save bootstrap
+Desinstalar libreria 
+`npm uninstall --save bootstrap`
 
-//version angular cli
-$ ng -v
-//ayuda angular 
-$ ng --help
-//ayuda comando especifico
-$ ng --help new
+Version angular cli
+`$ ng -v`
 
-// crear nuevo proyecto 
-ng new proyecto-angular6
-//ng new astrobot --routing -s -S
+Ayuda angular 
+`$ ng --help`
 
-//iniciar aplicacion
-npm start
+Ayuda comando especifico
+`$ ng --help new`
 
-//iniciar con ng
-ng serve
+Crear nuevo proyecto 
+`ng new proyecto-angular6`
 
-//crear un módulo llamada core
-ng g m core
+Iniciar aplicacion
+`npm start`
 
-//crea una carpeta llamada navigator junto con un componente llamado navigator y su html quitando los estilos y el archivo para pruebas
-ng g c core/navigator -is --spec=false 
+Iniciar con ng
+`ng serve`
 
-//crea un componente llamado header y su html dentro de la misma carpeta navigator
-ng g c core/navigator/header --flat
+Crear un módulo llamada core
+`ng g m core`
 
-//crea un modulo y html llamado home con su propio enrutamiento
-ng g m home --routing true
+Crea una carpeta llamada navigator junto con un componente llamado navigator y su html quitando los estilos y el archivo para pruebas
+`ng g c core/navigator -is --spec=false `
 
-//crea un nuevo servicio: EnvService , env.service.ts
-ng g s env
+Crea un componente llamado header y su html dentro de la misma carpeta navigator
+`ng g c core/navigator/header --flat`
 
-//arreglar problemas de vulnerability
-npm install -g npm@latest 
-npm cache clean --force
+Crea un modulo y html llamado home con su propio enrutamiento
+`ng g m home --routing true`
 
-//audiciones de seguridad
-npm set audit false
+Crea un nuevo servicio: EnvService , env.service.ts
+`ng g s env`
 
-//compilar para producción
-ng build --prod
+Arreglar problemas de vulnerability
+`npm install -g npm@latest` 
+`npm cache clean --force`
 
-//compilar para QA, es necesario agregar la configuración en angular.json y el archivo enviroment.qa.ts
-ng build --configuration qa
+Audiciones de seguridad
+`npm set audit false`
+
+Compilar para producción
+`ng build --prod`
+
+Compilar para QA, es necesario agregar la configuración en angular.json y el archivo enviroment.qa.ts
+`ng build --configuration qa`
 
 // Segundo curso *******************************************************
 //instalar typescript
