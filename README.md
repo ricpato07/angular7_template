@@ -119,19 +119,24 @@ tsc --version
 //instalar ionic
 npm install -g ionic 
 
-@ViewChild()
-[https://www.concretepage.com/angular-2/angular-2-viewchild-example]
+**@ViewChild()**
 
-get JS file
+https://www.concretepage.com/angular-2/angular-2-viewchild-example
+
+**get JS file**
+
 https://www.truecodex.com/course/angular-6/how-to-use-external-js-files-and-javascript-code-in-angular
 
-read enviroment files
+**read enviroment files**
+
 https://medium.com/@balramchavan/configure-and-build-angular-application-for-different-environments-7e94a3c0af23
 
-Local server http
+**Local server http**
+
 https://www.npmjs.com/package/local-web-server
 
-Injection dependency
+**Injection dependency**
+
 https://medium.com/@tomastrajan/total-guide-to-angular-6-dependency-injection-providedin-vs-providers-85b7a347b59f
 
 // **Componentes ********************************************************
