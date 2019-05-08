@@ -146,6 +146,11 @@ https://medium.com/@tomastrajan/total-guide-to-angular-6-dependency-injection-pr
 https://desarrolloweb.com/articulos/trabajar-modulos-angular.html
 
 // **Componentes ********************************************************
+
+- Formulario
+
+`<form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm" novalidate="">` 
+
 //parametros opcionales , no pueden venir los parametros opcionales al principio
 ejecuta(nombre:string="Nombre por defecto", apellidos:string, edad?:number)
 
