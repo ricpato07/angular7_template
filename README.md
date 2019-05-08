@@ -3,6 +3,7 @@ Template for Angular 7
 
 ### Puntos pendientes a revisar
 - [ ] Importar en otro módulo componentes, saca errores de maxlenght
+- [ ] Agregar component a validaciones de Form
 - [ ] Revisar ruta componentes en app
   11-crud/src/app/components
 - [ ] Generar servicio de Logger
