@@ -28,65 +28,85 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 ## Instrucciones para consola
 
 Instalar angular cli globalmente
+
  `npm install -g @angular/cli@latest`
 
 Desinstalar angularcli y borrar cache
+
 `$ npm uninstall -g @angular/cli
 $ npm cache clean`
 
 Instalar libreria http de angular 
+
 `npm install --save @angular/http`
 
 Instalar paquete para desarrollo
+
 `npm install --save-dev karma`
 
 Desinstalar libreria 
+
 `npm uninstall --save bootstrap`
 
 Version angular cli
+
 `$ ng -v`
 
 Ayuda angular 
+
 `$ ng --help`
 
 Ayuda comando especifico
+
 `$ ng --help new`
 
 Crear nuevo proyecto 
+
 `ng new proyecto-angular6`
 
 Iniciar aplicacion
+
 `npm start`
 
 Iniciar con ng
+
 `ng serve`
 
 Crear un módulo llamada core
+
 `ng g m core`
 
 Crea una carpeta llamada navigator junto con un componente llamado navigator y su html quitando los estilos y el archivo para pruebas
+
 `ng g c core/navigator -is --spec=false `
 
 Crea un componente llamado header y su html dentro de la misma carpeta navigator
+
 `ng g c core/navigator/header --flat`
 
 Crea un modulo y html llamado home con su propio enrutamiento
+
 `ng g m home --routing true`
 
 Crea un nuevo servicio: EnvService , env.service.ts
+
 `ng g s env`
 
 Arreglar problemas de vulnerability
+
 `npm install -g npm@latest` 
 `npm cache clean --force`
 
 Audiciones de seguridad
+
 `npm set audit false`
 
 Compilar para producción
+
 `ng build --prod`
 
 Compilar para QA, es necesario agregar la configuración en angular.json y el archivo enviroment.qa.ts
+
 `ng build --configuration qa`
 
 // Segundo curso *******************************************************
