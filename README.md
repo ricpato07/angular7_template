@@ -17,17 +17,18 @@ Template for Angular 7
 
 https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios-ajax-rest/
 
-Paquetes para visual studio code
--Terminal - Jun Han
--Angular 7 Snippets - Mikael Morlund
--Prettier Code Formatter - Esben Petersen
--Material icon theme - Philipp kief
--JavaScript (ES6) code snippets - charalampos karypidis
--JSHint - Dirk Baeumer $npm install -g jshint
+## Paquetes para visual studio code
+- Terminal - Jun Han
+- Angular 7 Snippets - Mikael Morlund
+- Prettier Code Formatter - Esben Petersen
+- Material icon theme - Philipp kief
+- JavaScript (ES6) code snippets - charalampos karypidis
+- JSHint - Dirk Baeumer $npm install -g jshint
 
+### Instrucciones para consola
 
-//instalar angular cli globalmente
-$ npm install -g @angular/cli@latest
+instalar angular cli globalmente
+ npm install -g @angular/cli@latest
 
 //desinstalar angularcli y borrar cache
 $ npm uninstall -g @angular/cli
