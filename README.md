@@ -10,7 +10,7 @@ Template for Angular 7
 
 
 * Importación de archivos css
--- <link rel="stylesheet" href="./assets/styles.css">
+`<link rel="stylesheet" href="./assets/styles.css">`
 
 
 
@@ -31,9 +31,9 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 
  `npm install -g @angular/cli@latest`
 
-//desinstalar angularcli y borrar cache
-$ npm uninstall -g @angular/cli
-$ npm cache clean
+desinstalar angularcli y borrar cache
+`$ npm uninstall -g @angular/cli
+$ npm cache clean`
 
 //instalar libreria http de angular 
 npm install --save @angular/http
