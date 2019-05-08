@@ -119,7 +119,7 @@ tsc --version
 //instalar ionic
 npm install -g ionic 
 
-##Enlaces
+## Enlaces
 
 **@ViewChild()**
 
