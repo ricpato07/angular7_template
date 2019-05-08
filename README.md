@@ -24,7 +24,7 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 - JavaScript (ES6) code snippets - charalampos karypidis
 - JSHint - Dirk Baeumer $npm install -g jshint
 
-### Instrucciones para consola
+## Instrucciones para consola
 
 **Instalar angular cli globalmente**
 
