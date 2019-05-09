@@ -149,7 +149,7 @@ https://medium.com/@tomastrajan/total-guide-to-angular-6-dependency-injection-pr
 https://desarrolloweb.com/articulos/trabajar-modulos-angular.html
 
 
-** Componentes 
+## Componentes 
 
 - Parámetros opcionales ,no pueden venir los parametros opcionales al principio
 
