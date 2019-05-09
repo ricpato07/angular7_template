@@ -3,13 +3,12 @@ Template for Angular 7
 
 ### Puntos pendientes a revisar
 - [ ] Importar en otro módulo componentes, saca errores de maxlenght
-- [ ] Agregar component a validaciones de Form
-- [ ] Revisar ruta componentes en app
-  11-crud/src/app/components
-- [ ] Generar servicio de Logger
-- [ ] Constantes en Angular 7
-- [ ] REvisar el  template reference variable, ControlValueAccessor 
+- [ ] Agregar custom component a validaciones de Form
+      REvisar el  template reference variable, ControlValueAccessor 
       http://anasfirdousi.com/how-to-make-custom-angular-components-form-enabled-ngModel-enabled.html
+- [ ] Revisar ruta componentes en app
+      11-crud/src/app/components
+- [ ] Constantes en Angular 7
 - [ ]Ejemplo con input y output
 
 
