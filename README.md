@@ -9,6 +9,7 @@ Template for Angular 7
 - [ ] Generar servicio de Logger
 - [ ] Constantes en Angular 7
 - [ ] REvisar el  template reference variable 
+- [ ]Ejemplo con input y output
 
 
 * Importación de archivos css
