@@ -1,0 +1,20 @@
+<div [ngClass]="grid" class="mb-30">
+    <label for="texto">{{label}}</label>
+    <label *ngIf="required" class="red"> *</label>
+    <br>
+
+    <input 
+        type="text" 
+        [name]="name" 
+        [maxlength]="maxlength" 
+        [required]="required"
+        [disabled]="deshabilitar"
+        [(ngModel)]="numeroValue" 
+        (focusout)="valida()" 
+        [ngClass]="{'errorTextoComponent': error,'textoComponent': true}" >
+
+    <p *ngIf="error" class="mensajeError">
+        <i class="fas fa-exclamation-triangle errorIconoTextoComponent"></i>
+        {{mensajeError}}
+    </p>
+</div>
