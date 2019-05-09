@@ -9,6 +9,7 @@ Template for Angular 7
 - [ ] Generar servicio de Logger
 - [ ] Constantes en Angular 7
 - [ ] REvisar el  template reference variable, ControlValueAccessor 
+      http://anasfirdousi.com/how-to-make-custom-angular-components-form-enabled-ngModel-enabled.html
 - [ ]Ejemplo con input y output
 
 
