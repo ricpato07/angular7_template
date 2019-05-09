@@ -1,0 +1,189 @@
+<app-modal-cuentas
+  #modal_cuentas
+  [show]="showModal"
+  (showChange)="addCuentas($event)">
+</app-modal-cuentas>
+
+<div class="container">
+  <div class="row">
+      <div class="col-xs-12">
+          <p class="warning">Recuerda que es tu responsabilidad validar que el nombre sea igual al que se encuentra en HOGAN</p>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12 header-form mb-15">
+          Datos del contratante
+      </div>
+  </div>
+
+  <div class="row">
+     <app-val-texto 
+            #nom_contratante
+            [label]="'Nombre'"
+            [name]="'nom_contratante'"
+            [maxlength]="50"
+            [textoValue]="basicos.nom_contratante"
+            (textoChange)="basicos.nom_contratante = $event"
+            [required]="true"
+            [usarExpReg]="true"
+            [textoExpReg]="name_pattern"
+            [upperCase] = "true"
+            [grid]="'col-sm-12 col-md-4 col-lg-4'">
+        </app-val-texto>  
+     
+        <app-val-texto 
+            #ape_contratante
+            [label]="'Apellidos'"
+            [name]="'ape_contratante'"
+            [maxlength]="50"
+            [textoValue]="basicos.ape_contratante"
+            (textoChange)="basicos.ape_contratante = $event"
+            [required]="false"
+            [usarExpReg]="true"
+            [textoExpReg]="name_pattern"
+            [upperCase] = "true"
+            [grid]="'col-sm-12 col-md-4 col-lg-4'">
+        </app-val-texto>     
+
+        <app-val-numero 
+           #num_cuenta
+           [label]="'No. de cuenta principal'"
+           [name]="'num_cuenta'"
+           [maxlength]="16"
+           [usarExpReg]="true"
+           [textoExpReg]="integer_pattern"
+           [numeroValue]="basicos.num_cuenta"
+           (numeroChange)="basicos.num_cuenta = $event"
+           [required]="true"
+           [grid]="'col-sm-11 col-md-3 col-lg-3'">
+        </app-val-numero>  
+
+        <p class="pt-5">  
+           <a (click)="mostrarModal()" class="tooltip pointer" alt="Agregar cuentas"> 
+            <i class="fas fa-money-check-alt fa-2x" ></i>
+            <span class="tooltiptext">Agregar cuentas</span>
+           </a>
+        </p>
+        
+    </div>
+
+    <div class="row">
+        <app-val-radio 
+                [label]="'¿El titular de la cuenta es el asegurado?'" 
+                [name]="'titular_asegurado'" 
+                [grid]="'col-sm-12 col-md-4 col-lg-4'"  
+                [(opciones)]="opcionesTitular"
+                (radioSelectedEmiter)="basicos.bnd_cont_aseg = $event">
+        </app-val-radio>
+    </div>  
+    <hr class="divisor-horizontal mt-40">
+    <div class="row">
+        <div class="col-xs-12 header-form mb-15 mt-15">
+            Dirección del riesgo
+        </div>
+    </div> 
+    
+    <div class="row">
+        <app-val-codigo-postal
+                [label]="'Código Postal'" 
+                [name]="'codigo_postal'" 
+                [grid]="'col-sm-12 col-md-4 col-lg-4'"  
+                [required]="true"
+                (textoChange)="basicos.cod_postal = $event">
+        </app-val-codigo-postal>
+
+        <app-val-texto 
+            #cve_estado
+            [label]="'Estado'"
+            [name]="'nom_estado'"
+            [deshabilitar]="true"
+            [required]="false"
+            [grid]="'col-sm-12 col-md-4 col-lg-4'">
+        </app-val-texto>  
+
+        <app-val-texto 
+            #cve_ciudad
+            [label]="'Ciudad'"
+            [name]="'cve_ciudad'"
+            [deshabilitar]="true"
+            [required]="false"
+            [grid]="'col-sm-12 col-md-4 col-lg-4'">
+        </app-val-texto>  
+
+    </div>  
+    <div class="row">
+        <app-val-texto 
+            #des_domicilio
+            [label]="'Calle'"
+            [name]="'des_domicilio'"
+            [maxlength]="50"
+            [textoValue]="basicos.des_domicilio"
+            (textoChange)="basicos.des_domicilio = $event"
+            [required]="true"
+            [usarExpReg]="true"
+            [textoExpReg]="name_pattern"
+            [upperCase] = "true"
+            [grid]="'col-sm-12 col-md-4 col-lg-4'">
+        </app-val-texto>
+
+        <app-val-texto
+            #num_ext
+            [label]="'No. exterior'"
+            [name]="'num_ext'"
+            [maxlength]="10"
+            [textoValue]="basicos.num_ext"
+            (textoChange)="basicos.num_ext = $event"
+            [required]="true"
+            [usarExpReg]="true"
+            [textoExpReg]="num_casa_pattern"
+            [grid]="'col-sm-12 col-md-2 col-lg-2'">
+        </app-val-texto>
+
+        <app-val-texto
+            #num_int
+            [label]="'No. interior'"
+            [name]="'num_int'"
+            [maxlength]="10"
+            [textoValue]="basicos.num_int"
+            (textoChange)="basicos.num_int = $event"
+            [required]="false"
+            [usarExpReg]="true"
+            [textoExpReg]="num_casa_pattern"
+            [grid]="'col-sm-12 col-md-2 col-lg-2'">
+        </app-val-texto>
+
+        <app-val-texto 
+            #des_colonia
+            [label]="'Colonia'"
+            [name]="'des_colonia'"
+            [maxlength]="100"
+            [textoValue]="basicos.des_colonia"
+            (textoChange)="basicos.des_colonia = $event"
+            [required]="false"
+            [usarExpReg]="true"
+            [textoExpReg]="name_pattern"
+            [upperCase] = "true"
+            [grid]="'col-sm-12 col-md-4 col-lg-4'">
+        </app-val-texto>
+    </div>   
+    <div class="row">
+        <app-val-radio 
+                [label]="'¿Paga renta por la vivienda a asegurar?'" 
+                [name]="'bnd_paga_renta'" 
+                [grid]="'col-sm-12 col-md-4 col-lg-4'"  
+                [(opciones)]="opcionesPagaRenta"
+                (radioSelectedEmiter)="bndPagaRenta = $event">
+        </app-val-radio>
+    </div>
+
+    <div class="row row_margin">
+        <hr class="divisor-horizontal mt-40">
+        <button class="button button-primary right" (click)="continuar()">CONTINUAR</button>
+    </div>
+
+    <pre>
+        {{basicos | json}}
+    </pre> 
+
+</div>  
