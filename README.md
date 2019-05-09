@@ -236,29 +236,32 @@ let [num_uno,num_dos, num_tres] = avengers;`
 
 - Configuración del módulo HttpClient
 
-`//configurar en el archivo app.module.ts
+Configurar en el archivo app.module.ts
+`
  //Importar HttpClientModule
 import {HttpClientModule} from '@angular/common/http';
 ..
 imports: [
     HttpClientModule, // cargamos el módulo en el array de imports
   ],
-
+`
 //Configurar en el servicio.ts 
-import {HttpClient, HttpHeaders} from '@angular/common/http';
 
-//variable directa en constructor
+`import {HttpClient, HttpHeaders} from '@angular/common/http';
+
+// Llamada desde el servicio
 constructor(
     public http: HttpClient
 ){}
 
 getProductos():Observable<any>{
-	return this._http.get(this.url+'productos');
-}
+	return this.http.get(this.url+'productos');
+}`
 
-// obtener datos desde el componente 
-getProductos(){
-	this._productoService.getProductos().subscribe(
+Obtener datos desde el componente como Observable
+`getProductos(){
+	this._productoService.getProductos()
+	.subscribe(
 		result => {
 		  if(result.code != 200){
 		      console.log(result);
@@ -272,6 +275,20 @@ getProductos(){
 	);
 }
 `
+Usar como promesa
+  `  this.insAdds.listPaises()
+       .toPromise()
+       .then((pa: Pais[]) => {
+         this.paises = [];
+
+         pa.forEach(p =>{
+           this.paises.push({label:p.descripcion,value:p.idPais + "",selected: false});
+         });
+       })
+       .catch(err =>{
+         console.log("Error al obtener los paises" + err);
+       });
+  `
 - Casting result to an interface
 
 `studentsObservable.subscribe((studentsData: Student[]) => {
