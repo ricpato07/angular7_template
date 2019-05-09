@@ -8,7 +8,7 @@ Template for Angular 7
   11-crud/src/app/components
 - [ ] Generar servicio de Logger
 - [ ] Constantes en Angular 7
-- [ ] REvisar el  template reference variable 
+- [ ] REvisar el  template reference variable, ControlValueAccessor 
 - [ ]Ejemplo con input y output
 
 
