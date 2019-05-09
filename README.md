@@ -11,6 +11,8 @@ Template for Angular 7
 - [ ] Constantes en Angular 7
 - [ ]Ejemplo con input y output
 - [ ]Ejemplo con routerLink
+- [ ]Revisar extends a class
+https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-components-with-typescript-inheritance/
 
 
 * Importación de archivos css
