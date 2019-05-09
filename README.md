@@ -10,6 +10,7 @@ Template for Angular 7
       11-crud/src/app/components
 - [ ] Constantes en Angular 7
 - [ ]Ejemplo con input y output
+- [ ]Ejemplo con routerLink
 
 
 * Importación de archivos css
