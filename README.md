@@ -83,6 +83,7 @@ $ npm cache clean`
 - Crea una carpeta llamada navigator junto con un componente llamado navigator y su html quitando los estilos y el archivo para pruebas
 
 `ng g c core/navigator -is --spec=false `
+`ng g c core/navigator -is --skip-tests`
 
 - Crea un componente llamado header y su html dentro de la misma carpeta navigator
 
