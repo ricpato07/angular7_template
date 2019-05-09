@@ -258,20 +258,26 @@ getProductos():Observable<any>{
 
 // obtener datos desde el componente 
 getProductos(){
-		this._productoService.getProductos().subscribe(
-			result => {
-				if(result.code != 200){
-					console.log(result);
-				}else{
-					this.productos = result.data;
-				}
-			},
-			error => {
-				console.log(<any>error);
-			}
-		);
-	}
+	this._productoService.getProductos().subscribe(
+		result => {
+		  if(result.code != 200){
+		      console.log(result);
+		   }else{
+		      this.productos = result.data;
+	           }
+		},
+		error => {
+			console.log(<any>error);
+		}
+	);
+}
 `
+- Casting result to an interface
+
+`studentsObservable.subscribe((studentsData: Student[]) => {
+    this.students = studentsData;
+});`
+
 ### Formularios
 
 - Form
