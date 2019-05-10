@@ -207,17 +207,17 @@ let [num_uno,num_dos, num_tres] = avengers;`
 
 Configurar el archivo app.routing.ts
 
-`import { Routes, RouterModule } from '@angular/router';
+	import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [
-  { path: '', component: BasicosContratanteComponent }
-  ];
-  
-@ NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-  `
+	const routes: Routes = [
+	  { path: '', component: BasicosContratanteComponent }
+	  ];
+
+	@ NgModule({
+	  imports: [RouterModule.forRoot(routes)],
+	  exports: [RouterModule]
+	})
+	  
 
 Agregar esta etiqueta en el main de app.component
 
