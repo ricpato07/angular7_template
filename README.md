@@ -3,8 +3,8 @@
 - [Puntos pendientes a revisar](#puntos-pendientes-a-revisar)
 - [Paquetes para visual studio code](#paquetes-para-visual-studio-code)
 - [Instrucciones para consola](#instrucciones-para-consola)
-- [Enlaces externos](#enlaces-externos)
 - [Código util](#código-util)
+- [Enlaces externos](#enlaces-externos)
 
 
 
