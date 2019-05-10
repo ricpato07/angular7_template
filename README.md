@@ -20,6 +20,8 @@
 - [ ] Ejemplo con routerLink
 - [ ] Revisar extends a class
 https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-components-with-typescript-inheritance/
+- [ ] Revisar trucos css, como crear un componente que crezca junto a uno que se quede del mismo tamaño
+https://css-tricks.com/almanac/properties/w/width/
 
 
 * Importación de archivos css
