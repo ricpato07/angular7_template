@@ -42,12 +42,12 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 
 - Instalar angular cli globalmente
 
- 	npm install -g @angular/cli@latest
+ 	`npm install -g @angular/cli@latest`
 
 - Desinstalar angularcli y borrar cache
 
-	$ npm uninstall -g @angular/cli
-	$ npm cache clean
+	`$ npm uninstall -g @angular/cli`
+	`$ npm cache clean`
 
 - Instalar libreria http de angular 
 
