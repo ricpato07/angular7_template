@@ -2,6 +2,11 @@
 **Contenido**
 - [Puntos pendientes a revisar](#puntos-pendientes-a-revisar)
 - [Paquetes para visual studio code](#paquetes-para-visual-studio-code)
+- [Instrucciones para consola](#instrucciones-para-consola)
+- [Enlaces externos](#enlaces-externos)
+- [Código util](#código-util)
+
+
 
 ### Puntos pendientes a revisar ###
 - [ ] Importar en otro módulo componentes, saca errores de maxlenght
@@ -33,7 +38,7 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 - JavaScript (ES6) code snippets - charalampos karypidis
 - JSHint - Dirk Baeumer $npm install -g jshint
 
-## Instrucciones para consola
+## Instrucciones para consola ##
 
 - Instalar angular cli globalmente
 
@@ -127,7 +132,7 @@ $ npm cache clean`
 - Instalar ionic
 `npm install -g ionic`
 
-## Enlaces
+## Enlaces externos ##
 
 **@ViewChild()**
 
@@ -154,9 +159,9 @@ https://medium.com/@tomastrajan/total-guide-to-angular-6-dependency-injection-pr
 https://desarrolloweb.com/articulos/trabajar-modulos-angular.html
 
 
-## Componentes 
+## Código util ## 
 
-- Parámetros opcionales ,no pueden venir los parametros opcionales al principio
+- Parámetros opcionales (no pueden venir los parametros opcionales al principio)
 
 `ejecuta(nombre:string="Nombre por defecto", apellidos:string, edad?:number)`
 
