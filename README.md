@@ -222,17 +222,36 @@ let [num_uno,num_dos, num_tres] = avengers;`
 
 `{{fecha | uppercase}}`
 
-- rutas de navegación
+- Rutas de navegación
 
-`configurar el archivo app.routing.ts
+Configurar el archivo app.routing.ts
 
-//agregar esta etiqueta en el main de app.component
-<router-outlet></router-outlet>
+`import { Routes, RouterModule } from '@angular/router';
 
-//routerLink, es necesario configurar el app.routing.ts 
-<li class="nav-item" routerLinkActive="active">
-	<a class="nav-link" [routerLink]="['home']">Home</a>
+const routes: Routes = [
+  { path: '', component: BasicosContratanteComponent }
+  ];
+  
+@ NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+  `
+
+Agregar esta etiqueta en el main de app.component
+
+`<router-outlet></router-outlet>`
+
+RouterLink en html
+
+`<li class="nav-item" routerLinkActive="active">
+   <a class="nav-link" [routerLink]="['home']">Home</a>
 </li>`
+
+Router in back file
+
+` this.router.navigate(['datos-inmueble']);`
+
 
 - Configuración del módulo HttpClient
 
