@@ -16,9 +16,9 @@
 - [ ] Revisar ruta componentes en app
       11-crud/src/app/components
 - [ ] Constantes en Angular 7
-- [ ]Ejemplo con input y output
-- [ ]Ejemplo con routerLink
-- [ ]Revisar extends a class
+- [ ] Ejemplo con input y output
+- [ ] Ejemplo con routerLink
+- [ ] Revisar extends a class
 https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-components-with-typescript-inheritance/
 
 
@@ -46,117 +46,91 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 
 - Desinstalar angularcli y borrar cache
 
-`$ npm uninstall -g @angular/cli
-$ npm cache clean`
+	`$ npm uninstall -g @angular/cli
+	$ npm cache clean`
 
 - Instalar libreria http de angular 
 
-`npm install --save @angular/http`
+	`npm install --save @angular/http`
 
 - Instalar paquete para desarrollo
 
-`npm install --save-dev karma`
+	`npm install --save-dev karma`
 
 - Desinstalar libreria 
 
-`npm uninstall --save bootstrap`
+	`npm uninstall --save bootstrap`
 
 - Version angular cli
 
-`$ ng -v`
+	`$ ng -v`
 
 - Ayuda angular 
 
-`$ ng --help`
+	`$ ng --help`
 
 - Ayuda comando especifico
 
-`$ ng --help new`
+	`$ ng --help new`
 
 - Crear nuevo proyecto 
 
-`ng new proyecto-angular6`
+	`ng new proyecto-angular6`
 
 - Iniciar aplicacion
 
-`npm start`
+	`npm start`
 
 - Iniciar con ng
 
-`ng serve`
+	`ng serve`
 
 - Crear un módulo llamada core
 
-`ng g m core`
+	`ng g m core`
 
 - Crea una carpeta llamada navigator junto con un componente llamado navigator y su html quitando los estilos y el archivo para pruebas
 
-`ng g c core/navigator -is --spec=false `
-`ng g c core/navigator -is --skip-tests`
+	`ng g c core/navigator -is --spec=false `
+	`ng g c core/navigator -is --skip-tests`
 
 - Crea un componente llamado header y su html dentro de la misma carpeta navigator
 
-`ng g c core/navigator/header --flat`
+	`ng g c core/navigator/header --flat`
 
 - Crea un modulo y html llamado home con su propio enrutamiento
 
-`ng g m home --routing true`
+	`ng g m home --routing true`
 
 - Crea un nuevo servicio: EnvService , env.service.ts
 
-`ng g s env`
+	`ng g s env`
 
 - Arreglar problemas de vulnerability
 
-`npm install -g npm@latest` 
-`npm cache clean --force`
+	`npm install -g npm@latest` 
+	`npm cache clean --force`
 
 - Audiciones de seguridad
 
-`npm set audit false`
+	`npm set audit false`
 
 - Compilar para producción
 
-`ng build --prod`
+	`ng build --prod`
 
 - Compilar para QA, es necesario agregar la configuración en angular.json y el archivo enviroment.qa.ts
 
-`ng build --configuration qa`
+	`ng build --configuration qa`
 
 - Instalar typescript
-`npm install -g typescript`
+	`npm install -g typescript`
 
 - Version de typescript
-`tsc --version`
+	`tsc --version`
 
 - Instalar ionic
-`npm install -g ionic`
-
-## Enlaces externos ##
-
-**@ViewChild()**
-
-https://www.concretepage.com/angular-2/angular-2-viewchild-example
-
-**get JS file**
-
-https://www.truecodex.com/course/angular-6/how-to-use-external-js-files-and-javascript-code-in-angular
-
-**read enviroment files**
-
-https://medium.com/@balramchavan/configure-and-build-angular-application-for-different-environments-7e94a3c0af23
-
-**Local server http**
-
-https://www.npmjs.com/package/local-web-server
-
-**Injection dependency**
-
-https://medium.com/@tomastrajan/total-guide-to-angular-6-dependency-injection-providedin-vs-providers-85b7a347b59f
-
-**Importar componentes dentro de módulos**
-
-https://desarrolloweb.com/articulos/trabajar-modulos-angular.html
+	`npm install -g ionic`
 
 
 ## Código util ## 
@@ -341,3 +315,28 @@ Usar como promesa
 `<input type="submit" value="{{titulo}}" [disabled]="!formProducto.form.valid" class="btn btn-success"/>`
 
 
+## Enlaces externos ##
+
+**@ViewChild()**
+
+https://www.concretepage.com/angular-2/angular-2-viewchild-example
+
+**get JS file**
+
+https://www.truecodex.com/course/angular-6/how-to-use-external-js-files-and-javascript-code-in-angular
+
+**read enviroment files**
+
+https://medium.com/@balramchavan/configure-and-build-angular-application-for-different-environments-7e94a3c0af23
+
+**Local server http**
+
+https://www.npmjs.com/package/local-web-server
+
+**Injection dependency**
+
+https://medium.com/@tomastrajan/total-guide-to-angular-6-dependency-injection-providedin-vs-providers-85b7a347b59f
+
+**Importar componentes dentro de módulos**
+
+https://desarrolloweb.com/articulos/trabajar-modulos-angular.html
