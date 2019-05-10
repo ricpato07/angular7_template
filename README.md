@@ -1,7 +1,9 @@
-# angular7_template
-Template for Angular 7
+# Angular7 template
+**Contenido**
+- [Puntos pendientes a revisar](#puntos-pendientes-a-revisar)
+- [Paquetes para visual studio code](#paquetes-para-visual-studio-code)
 
-### Puntos pendientes a revisar
+### Puntos pendientes a revisar ###
 - [ ] Importar en otro módulo componentes, saca errores de maxlenght
 - [ ] Agregar custom component a validaciones de Form
       REvisar el  template reference variable, ControlValueAccessor 
@@ -23,7 +25,7 @@ Servicios HttpClient
 
 https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios-ajax-rest/
 
-## Paquetes para visual studio code
+## Paquetes para Visual studio code ##
 - Terminal - Jun Han
 - Angular 7 Snippets - Mikael Morlund
 - Prettier Code Formatter - Esben Petersen
