@@ -15,9 +15,7 @@
       http://anasfirdousi.com/how-to-make-custom-angular-components-form-enabled-ngModel-enabled.html
 - [ ] Revisar ruta componentes en app
       11-crud/src/app/components
-- [ ] Constantes en Angular 7
 - [ ] Ejemplo con input y output
-- [ ] Ejemplo con routerLink
 - [ ] Revisar extends a class
 https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-components-with-typescript-inheritance/
 - [ ] Revisar trucos css, como crear un componente que crezca junto a uno que se quede del mismo tamaño
@@ -349,3 +347,7 @@ https://desarrolloweb.com/articulos/trabajar-modulos-angular.html
 **Spring y Angular**
 
 https://www.udemy.com/angular-spring/
+
+**@Input detection**
+
+https://ngdev.space/angular-2-input-property-changes-detection-3ccbf7e366d2
