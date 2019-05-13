@@ -352,3 +352,7 @@ https://www.udemy.com/angular-spring/
 **@Input detection**
 
 https://ngdev.space/angular-2-input-property-changes-detection-3ccbf7e366d2
+
+**Reusable Angular checkbox**
+
+https://medium.com/@vladguleaev/reusable-angular-create-multiple-checkbox-group-component-84f0e4727677
