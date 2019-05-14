@@ -21,6 +21,8 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 
 https://css-tricks.com/almanac/properties/w/width/
 
+- [ ] Retornar tipo de objeto o interface de un método
+
 
 * Importación de archivos css
 
