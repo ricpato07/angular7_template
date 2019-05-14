@@ -14,8 +14,11 @@
       11-crud/src/app/components
 - [ ] Ejemplo con input y output
 - [ ] Revisar extends a class
+
 https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-components-with-typescript-inheritance/
+
 - [ ] Revisar trucos css, como crear un componente que crezca junto a uno que se quede del mismo tamaño
+
 https://css-tricks.com/almanac/properties/w/width/
 
 
@@ -317,6 +320,11 @@ Usar como promesa
 
 
 ## Enlaces externos ##
+
+**Servicios HttpClient**
+
+https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios-ajax-rest/
+
 
 **@ViewChild()**
 
