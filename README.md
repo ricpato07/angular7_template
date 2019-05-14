@@ -10,9 +10,6 @@
 
 ### Puntos pendientes a revisar ###
 - [ ] Importar en otro módulo componentes, saca errores de maxlenght
-- [ ] Agregar custom component a validaciones de Form
-      REvisar el  template reference variable, ControlValueAccessor 
-      http://anasfirdousi.com/how-to-make-custom-angular-components-form-enabled-ngModel-enabled.html
 - [ ] Revisar ruta componentes en app
       11-crud/src/app/components
 - [ ] Ejemplo con input y output
@@ -356,3 +353,7 @@ https://ngdev.space/angular-2-input-property-changes-detection-3ccbf7e366d2
 **Reusable Angular checkbox**
 
 https://medium.com/@vladguleaev/reusable-angular-create-multiple-checkbox-group-component-84f0e4727677
+
+**ControlValueAccesor - Agregar custom component a validaciones de Form**
+
+http://anasfirdousi.com/how-to-make-custom-angular-components-form-enabled-ngModel-enabled.html
