@@ -9,7 +9,7 @@
 
 
 ### Puntos pendientes a revisar ###
-- [ ] Importar en otro módulo componentes, saca errores de maxlenght
+- [ ] No reconoce el pattern en el custom component
 - [ ] Revisar ruta componentes en app
       11-crud/src/app/components
 - [ ] Ejemplo con input y output
