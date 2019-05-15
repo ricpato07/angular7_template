@@ -322,23 +322,23 @@ Usar como promesa
 
 - Retornar un observable de un objeto
 
-`getCodigoPostal(cp :  number):Observable<any>{
-    this.cp = {
-              codigo_postal: 3000,
-              cve_estado :3,
-              des_estado : "BAJA CALIFORNIA SUR",
-              cve_municipio : 23,
-              des_municipio : "LORETO",
-              cve_ciudad : 23,
-              des_ciudad :"LORETO"
-              };
-   //return Observable.call(this.cp);  
-   return new Observable(subscriber => {
-                        subscriber.next(this.cp);
-                        this.logger.log("getCodigoPostal");
-                        this.logger.log(this.cp);
-                      });                   
-  }`
+	getCodigoPostal(cp :  number):Observable<any>{
+	    this.cp = {
+		      codigo_postal: 3000,
+		      cve_estado :3,
+		      des_estado : "BAJA CALIFORNIA SUR",
+		      cve_municipio : 23,
+		      des_municipio : "LORETO",
+		      cve_ciudad : 23,
+		      des_ciudad :"LORETO"
+		      };
+	   //return Observable.call(this.cp);  
+	   return new Observable(subscriber => {
+				subscriber.next(this.cp);
+				this.logger.log("getCodigoPostal");
+				this.logger.log(this.cp);
+			      });                   
+	  }
 
 
 ## Enlaces externos ##
