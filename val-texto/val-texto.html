@@ -1,4 +1,4 @@
-<div [ngClass]="grid" class="mb-30">
+<div [ngClass]="grid">
   <label for="texto">{{label}}</label>
   <label *ngIf="required" class="red"> *</label>
   <br>
@@ -11,7 +11,8 @@
     [disabled]="deshabilitar"
     (focusout)="valida()"
     [ngClass]="{'errorTextoComponent': error,'textoComponent': true}" 
-    [(ngModel)]="textoValue"/>
+    [(ngModel)]="textoValue"
+    (input)="onChange($event)"/>
 
   <p *ngIf="error" class="mensajeErrorTextoComponent">
       <i class="fas fa-exclamation-triangle errorIconoTextoComponent"></i>
