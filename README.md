@@ -216,24 +216,25 @@ let [num_uno,num_dos, num_tres] = avengers;
 - Rutas de navegación
 
 - Configurar el archivo app.routing.ts
+	
 	```
-		import { Routes, RouterModule } from '@angular/router';
+	import { Routes, RouterModule } from '@angular/router';
 
-		const routes: Routes = [
-		  { path: '', component: BasicosContratanteComponent }
-		  ];
+	const routes: Routes = [
+	  { path: '', component: BasicosContratanteComponent }
+	  ];
 
-		@ NgModule({
-		  imports: [RouterModule.forRoot(routes)],
-		  exports: [RouterModule]
-		})
+	@ NgModule({
+	  imports: [RouterModule.forRoot(routes)],
+	  exports: [RouterModule]
+	})
 	```
 	
 - Agregar esta etiqueta en el main de app.component
 
 	`<router-outlet></router-outlet>`
 
-RouterLink en html
+- RouterLink en html
 
 	``` 
 	<li class="nav-item" routerLinkActive="active">
@@ -241,36 +242,37 @@ RouterLink en html
 	</li>
 	```
 
-Router in back file
+- Router in back file
 
 	` this.router.navigate(['datos-inmueble']);`
 
 
-- Configuración del módulo HttpClient
+**- Configuración del módulo HttpClient**
 
-// Configurar en el archivo app.module.ts
-	```
-	 //Importar HttpClientModule
-	import {HttpClientModule} from '@angular/common/http';
-	..
-	imports: [
-	    HttpClientModule, // cargamos el módulo en el array de imports
-	  ],
-	```
-// Configurar en el servicio.ts 
+- Configurar en el archivo app.module.ts
 
-	```
-	import {HttpClient, HttpHeaders} from '@angular/common/http';
+```
+ //Importar HttpClientModule
+import {HttpClientModule} from '@angular/common/http';
+..
+imports: [
+    HttpClientModule,
+  ]
+```
+- Configurar en el servicio.ts 
 
-	// Llamada desde el servicio
-	constructor(
-	    public http: HttpClient
-	){}
+```
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
-	getProductos():Observable<any>{
-		return this.http.get(this.url+'productos');
-	}
-	```
+// Llamada desde el servicio
+constructor(
+    public http: HttpClient
+){}
+
+getProductos():Observable<any>{
+	return this.http.get(this.url+'productos');
+}
+```
 
 - Obtener datos desde el componente como Observable
 ```
@@ -291,19 +293,19 @@ getProductos(){
 }
 ```
 - Convertir Observable en Promise
-  ```  this.insAdds.listPaises()
-       .toPromise()
-       .then((pa: Pais[]) => {
-         this.paises = [];
+```  this.insAdds.listPaises()
+.toPromise()
+.then((pa: Pais[]) => {
+ this.paises = [];
 
-         pa.forEach(p =>{
-           this.paises.push({label:p.descripcion,value:p.idPais + "",selected: false});
-         });
-       })
-       .catch(err =>{
-         console.log("Error al obtener los paises" + err);
-       });
-  ```
+ pa.forEach(p =>{
+   this.paises.push({label:p.descripcion,value:p.idPais + "",selected: false});
+ });
+})
+.catch(err =>{
+ console.log("Error al obtener los paises" + err);
+});
+```
   
 - Cast result to an interface
 
