@@ -321,7 +321,7 @@ Usar como promesa
 `<input type="submit" value="{{titulo}}" [disabled]="!formProducto.form.valid" class="btn btn-success"/>`
 
 - Retornar un observable de un objeto
-
+```
 	getCodigoPostal(cp :  number):Observable<any>{
 	    this.cp = {
 		      codigo_postal: 3000,
@@ -339,7 +339,7 @@ Usar como promesa
 				this.logger.log(this.cp);
 			      });                   
 	  }
-
+```
 
 ## Enlaces externos ##
 
