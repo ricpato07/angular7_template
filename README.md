@@ -249,7 +249,7 @@ let [num_uno,num_dos, num_tres] = avengers;
 
 **- Configuración del módulo HttpClient**
 
-- Configurar en el archivo app.module.ts
+> Configurar en el archivo app.module.ts
 
 ```
  //Importar HttpClientModule
@@ -259,7 +259,7 @@ imports: [
     HttpClientModule,
   ]
 ```
-- Configurar en el servicio.ts 
+> Configurar en el servicio.ts 
 
 ```
 import {HttpClient, HttpHeaders} from '@angular/common/http';
