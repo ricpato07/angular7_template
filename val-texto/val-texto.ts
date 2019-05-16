@@ -1,11 +1,19 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, forwardRef } from '@angular/core';
 import { ValidacionesService } from '../../../services/validaciones.service';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+
+const customValueProvider = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => ValTextoComponent),
+  multi: true
+};
 
 @Component({
   selector: 'app-val-texto',
-  templateUrl: './val-texto.component.html'
+  templateUrl: './val-texto.component.html',
+  providers: [customValueProvider]
 })
-export class ValTextoComponent implements OnInit {
+export class ValTextoComponent implements OnInit, ControlValueAccessor {
   @Input() label: string; //Variable dinamica para customizar la etiqueta del componente
   @Input() deshabilitar: boolean; //Variable para deshabilitar el componente
   @Input() grid: string; //Variable personalizable desde el componente padre para saber el tamaño total que tendra el componente sobre la malla
@@ -23,7 +31,7 @@ export class ValTextoComponent implements OnInit {
   mensajeError: string; //Variable dinamica que sirve para customizar los mensajes de error
 
   constructor(
-    private valService : ValidacionesService
+    private valService: ValidacionesService
   ) {
     this.validar = true;
     this.deshabilitar = false;
@@ -35,36 +43,55 @@ export class ValTextoComponent implements OnInit {
 
   ngOnInit() { }
 
-  /**
-   * Funcion que valida que el texto no este vacio
-   * y emite un evento para pasar el contenido de la
-   * variable al componente padre
-   */
-  valida() {
+  valida(): boolean {
+    this.error = false;
+
     if (this.validar) {
+
       if (this.required) {
         if (this.valService.isEmpty(this.textoValue)) {
           this.mensajeError = `Error el campo de '${this.label}' no puede estar vacío`;
           this.error = true;
           this.textoChange.emit(this.textoValue);
-          return;
+          return false;
         }
       }
 
-      let regExp = new RegExp(this.textoExpReg);
-      if (this.usarExpReg && !regExp.test(this.textoValue)) {
-        this.mensajeError = `Error el campo de '${this.label}' no tiene un formato correcto`;
-        this.error = true;
-        this.textoChange.emit(this.textoValue);
-        return;
+      if (!this.valService.isEmpty(this.textoValue)) {
+        let regExp = new RegExp(this.textoExpReg);
+        if (this.usarExpReg && !regExp.test(this.textoValue)) {
+          this.mensajeError = `Error el campo de '${this.label}' no tiene un formato correcto`;
+          this.error = true;
+          this.textoChange.emit(this.textoValue);
+          return false;
+        }
       }
+
     }
 
-    this.error = false;
     if (this.upperCase && !this.valService.isEmpty(this.textoValue)) {
       this.textoValue = this.textoValue != undefined ? this.textoValue.toUpperCase() : "";
     }
+
     this.textoChange.emit(this.textoValue);
+    return true;
+  }
+
+  /* Funciones de la clase ControlValueAccessor */
+  propagateChange: any = () => { };
+
+  writeValue(value: any) {
+  }
+
+  registerOnChange(fn) {
+    this.propagateChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+  }
+
+  onChange(event) {
+    this.propagateChange(event.target.value);
   }
 
 }
