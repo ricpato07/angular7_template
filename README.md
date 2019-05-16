@@ -48,11 +48,11 @@ https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios
 
 - Desinstalar angularcli y borrar cache
 
-```
-$ npm uninstall -g @angular/cli
+	```
+	$ npm uninstall -g @angular/cli
 
-$ npm cache clean
-```
+	$ npm cache clean
+	```
 
 - Instalar libreria http de angular 
 
@@ -143,20 +143,24 @@ $ npm cache clean
 
 - Parámetros opcionales (no pueden venir los parametros opcionales al principio)
 
-`ejecuta(nombre:string="Nombre por defecto", apellidos:string, edad?:number)`
+	`ejecuta(nombre:string="Nombre por defecto", apellidos:string, edad?:number)`
 
 - Recuperar variables de un objeto
-`public identity={
-	id:1,
-	web: 'www.hotmail.com',
-	tematica:'Correo electronico'
-} 
-let {id, web}=this.identity;`
+	```
+	public identity={
+		id:1,
+		web: 'www.hotmail.com',
+		tematica:'Correo electronico'
+	} 
+	let {id, web}=this.identity;
+	```
 
 - Recuperar valores de un arreglo 
 
-`let avengers:string[] = ["uno","dos","tres"];
-let [num_uno,num_dos, num_tres] = avengers;`
+```
+let avengers:string[] = ["uno","dos","tres"];
+let [num_uno,num_dos, num_tres] = avengers;
+```
 
 - Condición if
 
@@ -211,61 +215,66 @@ let [num_uno,num_dos, num_tres] = avengers;`
 
 - Rutas de navegación
 
-Configurar el archivo app.routing.ts
+- Configurar el archivo app.routing.ts
+	```
+		import { Routes, RouterModule } from '@angular/router';
 
-	import { Routes, RouterModule } from '@angular/router';
+		const routes: Routes = [
+		  { path: '', component: BasicosContratanteComponent }
+		  ];
 
-	const routes: Routes = [
-	  { path: '', component: BasicosContratanteComponent }
-	  ];
+		@ NgModule({
+		  imports: [RouterModule.forRoot(routes)],
+		  exports: [RouterModule]
+		})
+	```
+	
+- Agregar esta etiqueta en el main de app.component
 
-	@ NgModule({
-	  imports: [RouterModule.forRoot(routes)],
-	  exports: [RouterModule]
-	})
-	  
-
-Agregar esta etiqueta en el main de app.component
-
-`<router-outlet></router-outlet>`
+	`<router-outlet></router-outlet>`
 
 RouterLink en html
 
-`<li class="nav-item" routerLinkActive="active">
-   <a class="nav-link" [routerLink]="['home']">Home</a>
-</li>`
+	``` 
+	<li class="nav-item" routerLinkActive="active">
+	   <a class="nav-link" [routerLink]="['home']">Home</a>
+	</li>
+	```
 
 Router in back file
 
-` this.router.navigate(['datos-inmueble']);`
+	` this.router.navigate(['datos-inmueble']);`
 
 
 - Configuración del módulo HttpClient
 
-Configurar en el archivo app.module.ts
-`
- //Importar HttpClientModule
-import {HttpClientModule} from '@angular/common/http';
-..
-imports: [
-    HttpClientModule, // cargamos el módulo en el array de imports
-  ],
-`
-//Configurar en el servicio.ts 
+// Configurar en el archivo app.module.ts
+	```
+	 //Importar HttpClientModule
+	import {HttpClientModule} from '@angular/common/http';
+	..
+	imports: [
+	    HttpClientModule, // cargamos el módulo en el array de imports
+	  ],
+	```
+// Configurar en el servicio.ts 
 
-`import {HttpClient, HttpHeaders} from '@angular/common/http';
+	```
+	import {HttpClient, HttpHeaders} from '@angular/common/http';
 
-// Llamada desde el servicio
-constructor(
-    public http: HttpClient
-){}
+	// Llamada desde el servicio
+	constructor(
+	    public http: HttpClient
+	){}
 
-getProductos():Observable<any>{
-	return this.http.get(this.url+'productos');
-}`
+	getProductos():Observable<any>{
+		return this.http.get(this.url+'productos');
+	}
+	```
 
-Obtener datos desde el componente como Observable
-`getProductos(){
+- Obtener datos desde el componente como Observable
+```
+getProductos(){
 	this._productoService.getProductos()
 	.subscribe(
 		result => {
@@ -280,9 +289,9 @@ Obtener datos desde el componente como Observable
 		}
 	);
 }
-`
-Usar como promesa
-  `  this.insAdds.listPaises()
+```
+- Convertir Observable en Promise
+  ```  this.insAdds.listPaises()
        .toPromise()
        .then((pa: Pais[]) => {
          this.paises = [];
@@ -294,12 +303,15 @@ Usar como promesa
        .catch(err =>{
          console.log("Error al obtener los paises" + err);
        });
-  `
-- Casting result to an interface
+  ```
+  
+- Cast result to an interface
 
-`studentsObservable.subscribe((studentsData: Student[]) => {
+```
+studentsObservable.subscribe((studentsData: Student[]) => {
     this.students = studentsData;
-});`
+});
+```
 
 ### Formularios
 
@@ -309,12 +321,13 @@ Usar como promesa
 
 - InputText
 
-`<label>
+```
+<label>
     Nombre
     <span *ngIf="!nombre.valid && nombre.touched" class="label label-danger">El nombre es obligatorio</span>
 </label>
 <input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="producto.nombre" class="form-control" required />	
-`
+```
 
 - Botón submit
 
