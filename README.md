@@ -25,14 +25,8 @@ https://css-tricks.com/almanac/properties/w/width/
 
 https://malcoded.com/posts/why-angular-not-works/
 
+- [ ] Como implementar JQuery en Angular
 
-* Importación de archivos css
-
-`<link rel="stylesheet" href="./assets/styles.css">`
-
-Servicios HttpClient
-
-https://victorroblesweb.es/2017/11/06/httpclient-en-angular-5-ejemplos-servicios-ajax-rest/
 
 ## Paquetes para Visual studio code ##
 - Terminal - Jun Han
