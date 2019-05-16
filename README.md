@@ -402,3 +402,6 @@ https://medium.com/@vladguleaev/reusable-angular-create-multiple-checkbox-group-
 **ControlValueAccesor - Agregar custom component a validaciones de Form**
 
 http://anasfirdousi.com/how-to-make-custom-angular-components-form-enabled-ngModel-enabled.html
+
+**Certificación en Java Developer**
+https://www.develop.com.mx/java-ee7-application-developer
