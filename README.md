@@ -30,6 +30,8 @@ https://malcoded.com/posts/why-angular-not-works/
 - [ ] Como utilizar identificadores en forms de template
 - [ ] Utilizar filter, map en Angular
 
+https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
+
 
 ## Paquetes para Visual studio code ##
 - Terminal - Jun Han
