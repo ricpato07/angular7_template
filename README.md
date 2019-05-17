@@ -28,6 +28,7 @@ https://malcoded.com/posts/why-angular-not-works/
 - [ ] Como implementar JQuery en Angular
 - [ ] Como utilizar declaraciones locales en funciones de Angular
 - [ ] Como utilizar identificadores en forms de template
+- [ ] Utilizar filter, map en Angular
 
 
 ## Paquetes para Visual studio code ##
