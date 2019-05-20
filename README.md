@@ -17,20 +17,8 @@
 
 https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-components-with-typescript-inheritance/
 
-- [ ] Revisar trucos css, como crear un componente que crezca junto a uno que se quede del mismo tamaño
-
-https://css-tricks.com/almanac/properties/w/width/
-
-- [ ] Errores comunes en Angular
-
-https://malcoded.com/posts/why-angular-not-works/
-
 - [ ] Como implementar JQuery en Angular
-- [ ] Como utilizar declaraciones locales en funciones de Angular
 - [ ] Como utilizar identificadores en forms de template
-- [ ] Utilizar filter, map en Angular
-
-https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
 
 
 ## Paquetes para Visual studio code ##
@@ -411,3 +399,7 @@ https://www.develop.com.mx/java-ee7-application-developer
 **Angular ng-template **
 
 https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/
+
+**Utilizar filter, map y reduce en Angular**
+
+https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
