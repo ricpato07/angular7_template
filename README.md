@@ -19,6 +19,8 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 
 - [ ] Como implementar JQuery en Angular
 - [ ] Como utilizar identificadores en forms de template
+- [ ] Llamadas sincronas con Observables
+
 
 
 ## Paquetes para Visual studio code ##
