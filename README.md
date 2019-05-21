@@ -13,7 +13,7 @@
 - [ ] Revisar ruta componentes en app
       11-crud/src/app/components
 - [ ] Ejemplo con input y output
-- [ ] Revisar extends a class
+- [ ] Revisar extends a class, hacer la prueba para extender un componente, se pasan sus variable al html del hijo?
 
 https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-components-with-typescript-inheritance/
 
