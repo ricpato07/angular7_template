@@ -21,6 +21,8 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 - [ ] Como utilizar identificadores en forms de template
 - [ ] Llamadas sincronas con Observables
 
+https://groups.google.com/forum/#!topic/angular/sNflKNsBrQk
+
 
 
 ## Paquetes para Visual studio code ##
