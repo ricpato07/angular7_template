@@ -23,6 +23,8 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 
 https://groups.google.com/forum/#!topic/angular/sNflKNsBrQk
 
+https://www.youtube.com/watch?v=49QM3KkOKXs
+
 
 
 ## Paquetes para Visual studio code ##
