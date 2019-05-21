@@ -25,6 +25,8 @@ https://groups.google.com/forum/#!topic/angular/sNflKNsBrQk
 
 https://www.youtube.com/watch?v=49QM3KkOKXs
 
+https://stackoverflow.com/questions/52415587/how-to-avoid-rxjs-subscribe-callback-hell
+
 
 
 ## Paquetes para Visual studio code ##
