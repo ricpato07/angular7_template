@@ -35,6 +35,7 @@ pipe, switchMap, map
 https://www.concretepage.com/angular/angular-observable-pipe
 
 - [ ] Obtener valores de las variables enviadas por Get Angular 7
+- [ ] Subir archivo de consultas SQL
 
 
 
