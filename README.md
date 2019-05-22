@@ -29,6 +29,8 @@ https://stackoverflow.com/questions/52415587/how-to-avoid-rxjs-subscribe-callbac
 
 pipe, switchMap, map
 
+https://www.concretepage.com/angular/angular-observable-pipe
+
 
 
 ## Paquetes para Visual studio code ##
