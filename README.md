@@ -355,6 +355,59 @@ studentsObservable.subscribe((studentsData: Student[]) => {
 	  }
 ```
 
+- MAP
+
+```
+	// What you have
+	var officers = [
+	  { id: 20, name: 'Captain Piett' },
+	  { id: 24, name: 'General Veers' },
+	  { id: 56, name: 'Admiral Ozzel' },
+	  { id: 88, name: 'Commander Jerjerrod' }
+	];
+	// What you need
+	[20, 24, 56, 88]
+  const officersIds = officers.map(officer => officer.id);
+```
+
+- REDUCE
+
+```
+var pilots = [
+  {
+    id: 10,
+    name: "Poe Dameron",
+    years: 14,
+  },
+  {
+    id: 2,
+    name: "Temmin 'Snap' Wexley",
+    years: 30,
+  }
+];
+
+const totalYears = pilots.reduce((acc, pilot) => acc + pilot.years, 0);
+```
+
+- FILTER
+
+```
+var pilots = [
+  {
+    id: 2,
+    name: "Wedge Antilles",
+    faction: "Rebels",
+  },
+  {
+    id: 8,
+    name: "Ciena Ree",
+    faction: "Empire",
+  }
+ ]
+  
+const rebels = pilots.filter(pilot => pilot.faction === "Rebels");
+```
+
 ## Enlaces externos ##
 
 **Servicios HttpClient**
