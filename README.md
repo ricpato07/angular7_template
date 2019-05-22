@@ -19,6 +19,9 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 
 - [ ] Como implementar JQuery en Angular
 - [ ] Como utilizar identificadores en forms de template
+
+https://medium.com/@bohndez.dev/custom-form-control-con-control-value-accessor-en-angular-5-6-o-7-f8f4030f105d
+
 - [ ] Llamadas sincronas con Observables
 
 https://groups.google.com/forum/#!topic/angular/sNflKNsBrQk
