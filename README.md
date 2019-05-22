@@ -415,6 +415,48 @@ var pilots = [
 const rebels = pilots.filter(pilot => pilot.faction === "Rebels");
 ```
 
+- Ejemplo PIPE, MAP
+
+```
+this.api.getProducto()
+      .pipe(
+        map(result => {
+          if (result.cveStatus != "A") {
+            throw new Error('No está activo el producto');
+          }
+          else {
+            return result;
+          }
+        }
+        ),
+        catchError(error => {
+          this.logger.error("Error en consulta al Producto");
+          this.logger.error(<any>error);
+          this.showErrorAcceso("El producto de Casa Habitación no está activo actualmente, no es posible realizar ventas.");
+          return of([]);
+        })
+      )
+      .subscribe((result) => {
+        this.logger.log("Producto");
+        this.logger.log(result);
+        this.productoActual = result;
+        this.storage.setItem("productoActual", result);
+
+        this.api.getTipoMoneda(result.cveMoneda)
+          .subscribe(
+            (moneda: TcMoneda) => {
+              this.logger.log("moneda");
+              this.logger.log(moneda);
+              this.storage.setItem("moneda", moneda);
+            },
+            error => {
+              this.logger.error("Error en consulta al Tipo de moneda");
+              this.logger.error(<any>error);
+            }
+          );
+      })
+```
+
 ## Enlaces externos ##
 
 **Servicios HttpClient**
