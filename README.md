@@ -513,3 +513,7 @@ https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateou
 **Utilizar filter, map y reduce en Angular**
 
 https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
+
+**Query params**
+
+https://alligator.io/angular/query-parameters/
