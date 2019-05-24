@@ -12,7 +12,6 @@
 - [ ] No reconoce el pattern en el custom component
 - [ ] Revisar ruta componentes en app
       11-crud/src/app/components
-- [ ] Ejemplo con input y output
 - [ ] Revisar extends a class, hacer la prueba para extender un componente, se pasan sus variable al html del hijo?
 
 https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-components-with-typescript-inheritance/
@@ -22,20 +21,8 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 
 https://medium.com/@bohndez.dev/custom-form-control-con-control-value-accessor-en-angular-5-6-o-7-f8f4030f105d
 
-- [ ] Llamadas sincronas con Observables
 
-https://groups.google.com/forum/#!topic/angular/sNflKNsBrQk
 
-https://www.youtube.com/watch?v=49QM3KkOKXs
-
-https://stackoverflow.com/questions/52415587/how-to-avoid-rxjs-subscribe-callback-hell
-
-pipe, switchMap, map
-
-https://www.concretepage.com/angular/angular-observable-pipe
-
-- [ ] Obtener valores de las variables enviadas por Get Angular 7
-- [ ] Subir archivo de consultas SQL
 
 
 
