@@ -22,6 +22,57 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 https://medium.com/@bohndez.dev/custom-form-control-con-control-value-accessor-en-angular-5-6-o-7-f8f4030f105d
 
 
+```
+
+listDatosModalInmueble() {
+    let datos = [
+      { elemento: "Costo aprox. por M2", 
+         cve_cat:"COTWIN-N2",
+         valores: [{cve_cat:"COTWIN-N2", cve_elem: "001", val_elem:"5,000"},
+                   {cve_cat:"COTWIN-N2", cve_elem: "002", val_elem:"7,500"},
+                   {cve_cat:"COTWIN-N2", cve_elem: "003", val_elem:"9,000"},
+                   {cve_cat:"COTWIN-N2", cve_elem: "004", val_elem:"10,500"}
+                  ]
+      },
+      { elemento: "FACHADA", 
+         cve_cat:"COTWIN-N3A",
+         valores: [{cve_cat:"COTWIN-N3A", cve_elem: "001", val_elem:"Aplanado de mortero, pintura vinilica"},
+                   {cve_cat:"COTWIN-N3A", cve_elem: "002", val_elem:"Pasta tabique aparente"},
+                   {cve_cat:"COTWIN-N3A", cve_elem: "003", val_elem:"De pasta fina tabique aparente, aplanados especiales, materiales pétreos"},
+                   {cve_cat:"COTWIN-N3A", cve_elem: "004", val_elem:"De canter o mármol de buena calidad, cristales o alumninio importado"}
+                  ]
+      }
+    ];
+    
+    return new Observable(subscriber => {
+      setTimeout(() => {
+        subscriber.next(datos);
+      }, 1000);
+    });
+  }
+  
+onItemChange(value:string) {
+    this.logger.log("onItemChange");
+    this.logger.log(value);
+    let valores = this.datos.filter(dato => dato.cve_cat == "COTWIN-N2")
+      .map(dato => dato.valores)
+      .filter(dato =>{
+        this.logger.log( dato.cve_elem)
+      })
+      // .filter(dato => {
+      //   this.logger.log( "filter");
+      //   this.logger.log( dato);
+      //    if(dato.cve_elem == value){
+      //      return dato;
+      //    }
+
+      // });
+  
+    this.logger.log("valores");
+    this.logger.log(valores);
+
+  }
+  ```
 
 
 
