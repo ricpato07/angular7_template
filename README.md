@@ -519,7 +519,7 @@ http://anasfirdousi.com/how-to-make-custom-angular-components-form-enabled-ngMod
 
 https://www.develop.com.mx/java-ee7-application-developer
 
-**Angular ng-template **
+**Angular ng-template**
 
 https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/
 
@@ -530,3 +530,8 @@ https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-fil
 **Query params**
 
 https://alligator.io/angular/query-parameters/
+
+**pipe, switchMap, map**
+
+https://www.concretepage.com/angular/angular-observable-pipe
+
