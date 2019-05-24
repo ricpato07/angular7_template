@@ -454,6 +454,19 @@ this.api.getProducto()
           );
       })
 ```
+- Obtener parámetros de una url
+
+```
+  constructor(
+    private activatedRoute : ActivatedRoute
+  )
+  ...
+    this.activatedRoute.queryParams
+      .subscribe(params => {
+        console.log("params");
+        console.log(params);
+      });
+```
 
 ## Enlaces externos ##
 
