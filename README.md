@@ -21,6 +21,10 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 
 https://medium.com/@bohndez.dev/custom-form-control-con-control-value-accessor-en-angular-5-6-o-7-f8f4030f105d
 
+- [ ] Incluir componente dentro de otro
+
+https://www.youtube.com/watch?v=LVtsocAyA3E
+
 
 ```
 
