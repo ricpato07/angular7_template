@@ -174,9 +174,9 @@ onItemChange(value:string) {
 
 	`ng build --prod`
 
-- Compilar para QA, es necesario agregar la configuración en angular.json y el archivo enviroment.qa.ts
+- Compilar para OAT, es necesario agregar la configuración en angular.json y el archivo enviroment.oat.ts
 
-	`ng build --configuration qa`
+	`ng build --configuration oat`
 
 - Instalar typescript
 	`npm install -g typescript`
