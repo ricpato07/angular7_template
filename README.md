@@ -194,6 +194,13 @@ onItemChange(value:string) {
 
 	`ejecuta(nombre:string="Nombre por defecto", apellidos:string, edad?:number)`
 
+- Eventos del input
+
+```
+	(focusout)="valida()" 
+        (keyup.enter)="onEnter()"	
+```	
+
 - Recuperar variables de un objeto
 	```
 	public identity={
