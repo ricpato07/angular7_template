@@ -557,6 +557,8 @@ https://medium.com/@vladguleaev/reusable-angular-create-multiple-checkbox-group-
 
 http://anasfirdousi.com/how-to-make-custom-angular-components-form-enabled-ngModel-enabled.html
 
+https://alligator.io/angular/custom-form-control/
+
 **Certificación en Java Developer**
 
 https://www.develop.com.mx/java-ee7-application-developer
