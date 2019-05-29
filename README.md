@@ -20,6 +20,8 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 
 - [ ] Compartir datos entre componentes
 
+https://medium.com/@yonem9/angular-c%C3%B3mo-narices-compartimos-datos-l%C3%B3gica-entre-varios-component-512ffda0be76   
+
 
 ```
 
@@ -194,7 +196,13 @@ onItemChange(value:string) {
 ```
 	(focusout)="valida()" 
         (keyup.enter)="onEnter()"	
-```	
+```
+
+- Declaración del Otput
+```
+  @Output() public throttle = new EventEmitter<number>();
+```
+
 
 - Recuperar variables de un objeto
 	```
