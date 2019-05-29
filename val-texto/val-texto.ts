@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output, forwardRef } from '@angular/core';
-import { ValidacionesService } from '../../../services/validaciones.service';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, Validator, FormControl } from '@angular/forms';
+import { ValidacionesService } from 'src/app/services/validaciones.service';
 
 const customValueProvider = {
   provide: NG_VALUE_ACCESSOR,
@@ -8,12 +8,18 @@ const customValueProvider = {
   multi: true
 };
 
+const cumtomValidatorProvider = {
+  provide: NG_VALIDATORS,
+  useExisting: forwardRef(() => ValTextoComponent),
+  multi: true,
+}
+
 @Component({
   selector: 'app-val-texto',
   templateUrl: './val-texto.component.html',
-  providers: [customValueProvider]
+  providers: [customValueProvider, cumtomValidatorProvider]
 })
-export class ValTextoComponent implements OnInit, ControlValueAccessor {
+export class ValTextoComponent implements OnInit, ControlValueAccessor, Validator {
   @Input() label: string; //Variable dinamica para customizar la etiqueta del componente
   @Input() deshabilitar: boolean; //Variable para deshabilitar el componente
   @Input() grid: string; //Variable personalizable desde el componente padre para saber el tamaño total que tendra el componente sobre la malla
@@ -44,11 +50,14 @@ export class ValTextoComponent implements OnInit, ControlValueAccessor {
   ngOnInit() { }
 
   valida(): boolean {
+
+    console.log("valida ValTextoComponent");
     this.error = false;
 
     if (this.validar) {
 
       if (this.required) {
+        console.log(this.textoValue);
         if (this.valService.isEmpty(this.textoValue)) {
           this.mensajeError = `Error el campo de '${this.label}' no puede estar vacío`;
           this.error = true;
@@ -78,20 +87,41 @@ export class ValTextoComponent implements OnInit, ControlValueAccessor {
   }
 
   /* Funciones de la clase ControlValueAccessor */
-  propagateChange: any = () => { };
-
+  
   writeValue(value: any) {
-  }
-
-  registerOnChange(fn) {
-    this.propagateChange = fn;
   }
 
   registerOnTouched(fn: () => void): void {
   }
 
+
+  registerOnChange(fn) {
+    this.propagateChange = fn;
+  }
+  propagateChange: any = () => { };
+
   onChange(event) {
+    console.log("onChange");
     this.propagateChange(event.target.value);
+  }
+
+
+  // validates the form, returns null when valid else the validation object
+  public validate(c: FormControl) {
+
+    console.log("validate");
+    console.log(c);
+    console.log(c.dirty);
+
+    if(c.dirty && !this.valida()){
+      return {
+        error:{
+          valid : false,
+          message: this.mensajeError
+        }
+      }
+    }
+    return null;
   }
 
 }
