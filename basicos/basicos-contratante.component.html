@@ -1,234 +1,283 @@
+<ngx-spinner
+  size="medium"
+  color="red"
+  type="ball-grid-pulse">
+  <p style="font-size: 20px; color: white">{{spinner_text}}</p>
+</ngx-spinner>
+
 <app-modal-cuentas
   #modal_cuentas
   [show]="showModal"
+  [numCuenta]="basicos.numCuenta"
   (showChange)="addCuentasAlternativas($event)"
   >
 </app-modal-cuentas>
 
-<form #forma="ngForm" novalidate="">  
-<div class="container">
- 
-  <div class="row">
-      <div class="col-xs-12">
-          <p class="warning">Recuerda que es tu responsabilidad validar que el nombre sea igual al que se encuentra en HOGAN</p>
-      </div>
-  </div>
-
-  <div class="row">
-      <div class="col-xs-12 header-form mb-15">
-          Datos del contratante
-      </div>
-  </div>
-
-  <div class="row mb-20">
-     <app-val-texto 
-            ngModel 
-            #nom_contratante 
-            [label]="'Nombre'"
-            [name]="'nom_contratante'"
-            [maxlength]="50"
-            [textoValue]="basicos.nomContratante"
-            (textoChange)="basicos.nomContratante = $event"
-            [required]="true"
-            [usarExpReg]="true"
-            [textoExpReg]="name_pattern"
-            [upperCase] = "true"
-            [grid]="'col-sm-12 col-md-4 col-lg-4'">
-        </app-val-texto>  
-     
-        <app-val-texto 
-            ngModel 
-            #ape_contratante 
-            [label]="'Apellidos'"
-            [name]="'ape_contratante'"
-            [maxlength]="50"
-            [textoValue]="basicos.apeContratante"
-            (textoChange)="basicos.apeContratante = $event"
-            [required]="false"
-            [usarExpReg]="true"
-            [textoExpReg]="name_pattern"
-            [upperCase] = "true"
-            [grid]="'col-sm-12 col-md-4 col-lg-4'">
-        </app-val-texto>     
-
-        <app-val-numero 
-           ngModel
-           #num_cuenta
-           [label]="'No. de cuenta principal'"
-           [name]="'num_cuenta'"
-           [maxlength]="16"
-           [usarExpReg]="true"
-           [textoExpReg]="integer_pattern"
-           [numeroValue]="basicos.numCuenta"
-           (numeroChange)="basicos.numCuenta = $event"
-           [required]="true"
-           [grid]="'col-sm-11 col-md-3 col-lg-3'">
-        </app-val-numero>  
-        
-        <p class="pt-5">  
-           <a (click)="mostrarModal()" class="tooltip pointer" alt="Agregar cuentas"> 
-            <i class="fas fa-money-check-alt fa-2x" ></i>
-            <span class="tooltiptext">Agregar cuentas</span>
-           </a>
-        </p>
-        <pre>
-        {{num_cuenta.errors?.required}}
-    </pre>
-    </div>
-
-    <div class="row">
-        <app-val-radio 
-            ngModel
-            #titular_asegurado 
-            [label]="'¿El titular de la cuenta es el asegurado?'" 
-            [name]="'titular_asegurado'" 
-            [required] = "true"
-            [grid]="'col-sm-12 col-md-4 col-lg-4'"  
-            [(opciones)]="opcionesTitular"
-            (radioSelectedEmiter)="basicos.bndContAseg = $event">
-        </app-val-radio>
-    </div>  
-    
-    <hr class="divisor-horizontal mt-30">
-
-    <div class="row mb-15 mt-30">
-        <div class="col-xs-12 header-form">
-            Dirección del riesgo
-        </div>
-    </div> 
-    
-    <div class="row mb-25">
-        <app-val-codigo-postal
-            ngModel
-            #codigo_postal 
-            [label]="'Código Postal'" 
-            [name]="'codigo_postal'" 
-            [textoValue]="basicos.codPostal"
-            [grid]="'col-sm-12 col-md-4 col-lg-4'"  
-            [required]="true"
-            (textoChange)="codigoPostalResponse($event)">
-        </app-val-codigo-postal>
-
-        <app-val-texto 
-            ngModel
-            #cve_estado 
-            [label]="'Estado'"
-            [name]="'nom_estado'"
-            [textoValue] = "codigoPostal.desEstado"
-            [deshabilitar]="true"
-            [required]="false"
-            [grid]="'col-sm-12 col-md-4 col-lg-4'">
-        </app-val-texto>  
-
-        <app-val-texto 
-            ngModel
-            #cve_ciudad 
-            [label]="'Ciudad'"
-            [name]="'cve_ciudad'"
-            [textoValue] = "codigoPostal.desCiudad"
-            [deshabilitar]="true"
-            [required]="false"
-            [grid]="'col-sm-12 col-md-4 col-lg-4'">
-        </app-val-texto>  
-
-    </div>  
-    <div class="row mb-25">
-        <app-val-texto 
-            ngModel
-            #des_domicilio 
-            [label]="'Calle'"
-            [name]="'des_domicilio'"
-            [maxlength]="50"
-            [textoValue]="basicos.desDomicilio"
-            (textoChange)="basicos.desDomicilio = $event"
-            [required]="true"
-            [usarExpReg]="true"
-            [textoExpReg]="name_pattern"
-            [upperCase] = "true"
-            [grid]="'col-sm-12 col-md-4 col-lg-4'">
-        </app-val-texto>
-
-        <app-val-texto
-            ngModel
-            #num_ext 
-            [label]="'No. exterior'"
-            [name]="'num_ext'"
-            [maxlength]="10"
-            [textoValue]="basicos.numExt"
-            (textoChange)="basicos.numExt = $event"
-            [required]="true"
-            [usarExpReg]="true"
-            [textoExpReg]="num_casa_pattern"
-            [grid]="'col-sm-12 col-md-2 col-lg-2'">
-        </app-val-texto>
-
-        <app-val-texto
-            ngModel
-            #num_int 
-            [label]="'No. interior'"
-            [name]="'num_int'"
-            [maxlength]="10"
-            [textoValue]="basicos.numInt"
-            (textoChange)="basicos.numInt = $event"
-            [required]="false"
-            [usarExpReg]="true"
-            [textoExpReg]="num_casa_pattern"
-            [grid]="'col-sm-12 col-md-2 col-lg-2'">
-        </app-val-texto>
-
-        <app-val-texto 
-            ngModel
-            #des_colonia 
-            [label]="'Colonia'"
-            [name]="'des_colonia'"
-            [maxlength]="100"
-            [textoValue]="basicos.desColonia"
-            (textoChange)="basicos.desColonia = $event"
-            [required]="false"
-            [usarExpReg]="true"
-            [textoExpReg]="name_pattern"
-            [upperCase] = "true"
-            [grid]="'col-sm-12 col-md-4 col-lg-4'">
-        </app-val-texto>
+<ng-template #sin_acceso>
+    <div class="container">
+        <div class="row mt-40">
+            <div class="col-xs-12 warning_2">
+                <p><i class="fas fa-exclamation-triangle errorIconoTextoComponent"></i>
+                {{errorAcceso}}
+                </p>
+                <span class="returnButton" (click)="nueva()">
+                    <i class="fas fa-chevron-left"></i>
+                    Atras
+                </span>
+            </div>
+        </div>  
     </div>   
-    <div class="row">
-        <app-val-radio 
-            ngModel
-            #bnd_paga_renta
-            [label]="'¿Paga renta por la vivienda a asegurar?'" 
-            [name]="'bnd_paga_renta'" 
-            [grid]="'col-sm-12 col-md-4 col-lg-4'"  
-            [(opciones)]="opcionesPagaRenta"
-            [required] = "true"
-            (radioSelectedEmiter)="bndPagaRenta = $event">
-        </app-val-radio>
-    </div>
+</ng-template>
 
-    <hr class="divisor-horizontal mt-30">
+<ng-template #datos_contratante>
+    <form #forma="ngForm" novalidate="">  
+    <div class="container">
     
-    <div class="row row_margin">
-        <button 
-            type="submit"
-            class="button button-primary right" 
-            [disabled] = "false"
-            (click) = "continuar()"
-            >
-            CONTINUAR
-        </button>
-    </div>
-
     <div class="row">
         <div class="col-xs-12">
-            <app-mensaje-error
-                [mensaje]="mensajeError.mensajeError"
-                [heading]="mensajeError.headingError"
-                [show]="mensajeError.mostrarMensajeError"
-                (showEvent)="mensajeError.mostrarMensajeError = $event"
-            ></app-mensaje-error>
+            <p class="warning">Recuerda que es tu responsabilidad validar que el nombre sea igual al que se encuentra en HOGAN</p>
         </div>
     </div>
-<pre>
-    {{basicos | json}}
-</pre>
-</div>  
-</form>
+
+    <div class="row">
+        <div class="col-xs-12 header-form mb-15">
+            Datos del contratante
+        </div>
+    </div>
+
+    <div class="row mb-20">
+
+           <app-val-numero-cuenta 
+                ngModel
+                #num_cuenta
+                [label]="'No. de cuenta principal'"
+                [name]="'num_cuenta'"
+                [maxlength]="16"
+                [usarExpReg]="true"
+                [textoExpReg]="integer_pattern"
+                [numeroValue]="basicos.numCuenta"
+                (numeroChange)="basicos.numCuenta = $event"
+                (validCuenta)="cuentaAction($event)"
+                [required]="true"
+                [deshabilitar]="bndCuentaValida"
+                [grid]="'col-sm-11 col-md-3 col-lg-3'">
+            </app-val-numero-cuenta>  
+
+            <p *ngIf="bndCuentaValida" class="col-sm-1 col-md-1 col-lg-1 pt-5">  
+                <a (click)="mostrarModal()" 
+                    class="tooltip pointer"> 
+                    <i class="fas fa-money-check-alt fa-2x" ></i>
+                    <span class="tooltiptext">Agregar cuentas</span>
+                </a>
+            </p>
+
+        <app-val-texto 
+                *ngIf="bndCuentaValida"
+                ngModel 
+                #nom_contratante 
+                [label]="'Nombre'"
+                [name]="'nom_contratante'"
+                [maxlength]="50"
+                [textoValue]="basicos.nomContratante"
+                (textoChange)="basicos.nomContratante = $event"
+                [required]="false"
+                [usarExpReg]="true"
+                [textoExpReg]="name_pattern"
+                [deshabilitar]="true"
+                [upperCase] = "true"
+                [grid]="'col-sm-12 col-md-4 col-lg-4'">
+            </app-val-texto>  
+        
+            <app-val-texto 
+                *ngIf="bndCuentaValida"
+                ngModel 
+                #ape_contratante 
+                [label]="'Apellidos'"
+                [name]="'ape_contratante'"
+                [maxlength]="50"
+                [textoValue]="basicos.apeContratante"
+                (textoChange)="basicos.apeContratante = $event"
+                [required]="false"
+                [usarExpReg]="true"
+                [textoExpReg]="name_pattern"
+                [upperCase] = "true"
+                [deshabilitar]="true"
+                [grid]="'col-sm-12 col-md-4 col-lg-4'">
+            </app-val-texto>     
+
+        </div>
+
+        <div class="row" *ngIf="bndCuentaValida">
+            <app-val-radio 
+                ngModel
+                #titular_asegurado 
+                [label]="'¿El titular de la cuenta es el asegurado?'" 
+                [name]="'titular_asegurado'" 
+                [grid]="'col-sm-12 col-md-4 col-lg-4'"  
+                [(opciones)]="opcionesTitular"
+                (radioSelectedEmiter)="basicos.bndContAseg = $event">
+            </app-val-radio>
+        </div>  
+    <div id="direccion" *ngIf="bndCuentaValida">
+                
+        <hr class="divisor-horizontal mt-30">
+
+        <div class="row mb-15 mt-30">
+            <div class="col-xs-12 header-form">
+                Dirección del riesgo
+            </div>
+        </div> 
+        
+        <div class="row mb-25">
+            <app-val-codigo-postal
+                ngModel
+                #codigo_postal 
+                [label]="'Código Postal'" 
+                [name]="'codigo_postal'" 
+                [textoValue]="basicos.codPostal"
+                [grid]="'col-sm-12 col-md-4 col-lg-4'"  
+                [required]="true"
+                (textoChange)="codigoPostalResponse($event)">
+            </app-val-codigo-postal>
+
+            <app-val-texto 
+                ngModel
+                #cve_estado 
+                [label]="'Estado'"
+                [name]="'nom_estado'"
+                [textoValue] = "codigoPostal.desEstado"
+                [deshabilitar]="true"
+                [required]="false"
+                [grid]="'col-sm-12 col-md-4 col-lg-4'">
+            </app-val-texto>  
+
+            <app-val-texto 
+                ngModel
+                #cve_ciudad 
+                [label]="'Ciudad'"
+                [name]="'cve_ciudad'"
+                [textoValue] = "codigoPostal.desCiudad"
+                [deshabilitar]="true"
+                [required]="false"
+                [grid]="'col-sm-12 col-md-4 col-lg-4'">
+            </app-val-texto>  
+
+        </div>  
+        <div class="row mb-25">
+            <app-val-texto 
+                ngModel
+                #des_domicilio 
+                [label]="'Calle'"
+                [name]="'des_domicilio'"
+                [maxlength]="50"
+                [textoValue]="basicos.desDomicilio"
+                (textoChange)="basicos.desDomicilio = $event"
+                [required]="true"
+                [usarExpReg]="true"
+                [textoExpReg]="name_pattern"
+                [upperCase] = "true"
+                [grid]="'col-sm-12 col-md-4 col-lg-4'">
+            </app-val-texto>
+
+            <app-val-texto
+                ngModel
+                #num_ext 
+                [label]="'No. exterior'"
+                [name]="'num_ext'"
+                [maxlength]="10"
+                [textoValue]="basicos.numExt"
+                (textoChange)="basicos.numExt = $event"
+                [required]="true"
+                [usarExpReg]="true"
+                [textoExpReg]="num_casa_pattern"
+                [grid]="'col-sm-12 col-md-2 col-lg-2'">
+            </app-val-texto>
+
+            <app-val-texto
+                ngModel
+                #num_int 
+                [label]="'No. interior'"
+                [name]="'num_int'"
+                [maxlength]="10"
+                [textoValue]="basicos.numInt"
+                (textoChange)="basicos.numInt = $event"
+                [required]="false"
+                [usarExpReg]="true"
+                [textoExpReg]="num_casa_pattern"
+                [grid]="'col-sm-12 col-md-2 col-lg-2'">
+            </app-val-texto>
+
+            <app-val-texto 
+                ngModel
+                #des_colonia 
+                [label]="'Colonia'"
+                [name]="'des_colonia'"
+                [maxlength]="100"
+                [textoValue]="basicos.desColonia"
+                (textoChange)="basicos.desColonia = $event"
+                [required]="false"
+                [usarExpReg]="true"
+                [textoExpReg]="name_pattern"
+                [upperCase] = "true"
+                [grid]="'col-sm-12 col-md-4 col-lg-4'">
+            </app-val-texto>
+        </div>   
+        <div class="row">
+            <app-val-radio 
+                ngModel
+                #bnd_paga_renta
+                [label]="'¿Paga renta por la vivienda a asegurar?'" 
+                [name]="'bnd_paga_renta'" 
+                [grid]="'col-sm-12 col-md-4 col-lg-4'"  
+                [(opciones)]="opcionesPagaRenta"
+                (radioSelectedEmiter)="bndPagaRenta = $event">
+            </app-val-radio>
+        </div>
+    
+        <hr class="divisor-horizontal mt-30">
+        
+        <div class="row row_margin">
+            <button 
+                type="submit"
+                class="button button-primary right" 
+                [disabled] = "false"
+                (click) = "continuar()">
+                CONTINUAR
+            </button>
+            <button 
+                class="button button-outline right" 
+                (click)="nueva()">
+                NUEVA
+           </button>
+        </div>
+    </div>
+        
+        <pre>
+            Form valid: {{forma.form.valid}}
+        </pre> 
+
+        {{show(forma.form)}}
+
+        <pre>
+            {{basicos | json}}
+        </pre>
+
+    </div>  
+    </form>
+</ng-template>
+
+<div class="row">
+    <div class="col-xs-12">
+        <app-mensaje-error
+            #mensaje_error 
+            [mensaje]="mensajeError.mensajeError"
+            [heading]="mensajeError.headingError"
+            [show]="mensajeError.mostrarMensajeError"
+            (showEvent)="mensajeError.mostrarMensajeError = $event"
+        ></app-mensaje-error>
+    </div>
+</div>
+
+<ng-container 
+  *ngTemplateOutlet="bndErrorAcceso?sin_acceso:datos_contratante">
+</ng-container>
