@@ -18,9 +18,10 @@ https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-compone
 
 - [ ] Como implementar JQuery en Angular
 
-- [ ] Compartir datos entre componentes
+- [ ] Eventos de input, select, etc en Angular 7
 
-https://medium.com/@yonem9/angular-c%C3%B3mo-narices-compartimos-datos-l%C3%B3gica-entre-varios-component-512ffda0be76   
+
+
 
 
 ```
@@ -520,16 +521,6 @@ this.api.getProducto()
       });
 ```
 
- <app-val-combo
-        ngModel    
-        #sexo
-        [label]="'Sexo'"
-        [name]="'sexo'"
-        [elementos]="opcionessexo"
-        (change)="usuario.sexo = $event"
-        [required]="true"
-        [grid]="'col-sm-12 col-md-12 col-lg-12'">
-      </app-val-combo>  
 
 ## Enlaces externos ##
 
