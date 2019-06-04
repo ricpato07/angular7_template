@@ -1,0 +1,19 @@
+<div [class]="grid" >
+  <label>{{label}}</label> 
+  <label *ngIf="required" class="red"> *</label> 
+  <br>
+
+  <select 
+   [name] ="name"
+   [ngClass]="{'search':true,'mensajeErrorSelectComponent':error}"
+   [(ngModel)]="selected"
+   (change)="onChange()"
+   >
+    <option *ngFor="let item of elementos" value="item.value">{{item.label}}</option>
+  </select>
+
+  <p *ngIf="error" class="errorMensajeSelectComponent">
+    <i class="fas fa-exclamation-triangle errorIconoSelectComponent"></i>
+    {{mensajeError}}
+</p>
+</div>
