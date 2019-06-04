@@ -520,6 +520,17 @@ this.api.getProducto()
       });
 ```
 
+ <app-val-combo
+        ngModel    
+        #sexo
+        [label]="'Sexo'"
+        [name]="'sexo'"
+        [elementos]="opcionessexo"
+        (change)="usuario.sexo = $event"
+        [required]="true"
+        [grid]="'col-sm-12 col-md-12 col-lg-12'">
+      </app-val-combo>  
+
 ## Enlaces externos ##
 
 **Servicios HttpClient**
