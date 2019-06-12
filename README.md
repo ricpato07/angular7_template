@@ -9,16 +9,13 @@
 
 
 ### Puntos pendientes a revisar ###
-- [ ] No reconoce el pattern en el custom component
 - [ ] Revisar ruta componentes en app
       11-crud/src/app/components
-- [ ] Revisar extends a class, hacer la prueba para extender un componente, se pasan sus variable al html del hijo?
-
-https://devblogs.microsoft.com/premier-developer/angular-how-to-simplify-components-with-typescript-inheritance/
 
 - [ ] Como implementar JQuery en Angular
 
-- [ ] Eventos de input, select, etc en Angular 7
+- [ ] implementar el root scope en Angular 7
+https://stackoverflow.com/questions/37627197/whats-an-alternative-for-root-scope-in-angular-2?rq=1
 
 
 
