@@ -17,6 +17,9 @@
 - [ ] implementar el root scope en Angular 7
 https://stackoverflow.com/questions/37627197/whats-an-alternative-for-root-scope-in-angular-2?rq=1
 
+- [ ] Animaciones en Angular 7, efecto para el colapsable
+
+
 
 
 
