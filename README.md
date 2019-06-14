@@ -21,9 +21,6 @@ https://stackoverflow.com/questions/37627197/whats-an-alternative-for-root-scope
 
 
 
-
-
-
 ```
 
 listDatosModalInmueble() {
@@ -305,7 +302,9 @@ let [num_uno,num_dos, num_tres] = avengers;
 - Router in back file
 
 	` this.router.navigate(['datos-inmueble']);`
-
+	
+- Comparar objeto vacío
+`Object.entries(obj).length === 0 && obj.constructor === Object`
 
 **- Configuración del módulo HttpClient**
 
