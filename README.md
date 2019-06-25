@@ -19,6 +19,11 @@ https://stackoverflow.com/questions/37627197/whats-an-alternative-for-root-scope
 
 - [ ] Animaciones en Angular 7, efecto para el colapsable
 
+- [ ] Multiples Datasource con JPA
+
+https://medium.com/@joeclever/using-multiple-datasources-with-spring-boot-and-spring-data-6430b00c02e7
+
+
 
 
 ```
