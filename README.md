@@ -607,3 +607,7 @@ https://alligator.io/angular/query-parameters/
 
 https://www.concretepage.com/angular/angular-observable-pipe
 
+**JPA Reference**
+
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+
