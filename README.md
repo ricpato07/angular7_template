@@ -23,6 +23,12 @@ Visual Studio Code
 comentar descomentar
 Ctrl + }
 
+multiselector
+Ctrl + Shift + L
+
+borrar linea
+Ctrl + Shift + K
+
 
 
 ```
