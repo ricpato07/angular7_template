@@ -620,3 +620,7 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 
 https://medium.com/@joeclever/using-multiple-datasources-with-spring-boot-and-spring-data-6430b00c02e7
 
+**HTTPS in Angular CLI**
+
+https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8
+
