@@ -19,10 +19,15 @@ https://stackoverflow.com/questions/37627197/whats-an-alternative-for-root-scope
 
 - [ ] Animaciones en Angular 7, efecto para el colapsable
 
-- [ ] Multiples Datasource con JPA
+Visual Studio Code
+comentar descomentar
+Ctrl + }
 
-https://medium.com/@joeclever/using-multiple-datasources-with-spring-boot-and-spring-data-6430b00c02e7
+multiselector
+Ctrl + Shift + L
 
+borrar linea
+Ctrl + Shift + K
 
 
 
@@ -606,4 +611,16 @@ https://alligator.io/angular/query-parameters/
 **pipe, switchMap, map**
 
 https://www.concretepage.com/angular/angular-observable-pipe
+
+**JPA Reference**
+
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+
+**Multiples Datasource con JPA**
+
+https://medium.com/@joeclever/using-multiple-datasources-with-spring-boot-and-spring-data-6430b00c02e7
+
+**HTTPS in Angular CLI**
+
+https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8
 
