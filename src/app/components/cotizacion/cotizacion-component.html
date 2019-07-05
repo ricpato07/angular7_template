@@ -1,0 +1,274 @@
+<ngx-spinner
+    size="medium"
+    color="red"
+    type="ball-grid-pulse">
+    <p style="font-size: 20px; color: white">{{spinner_text}}</p>
+</ngx-spinner>
+
+<app-modal-pdf
+      *ngIf="showModalPdf"  
+      [show]="showModalPdf"
+      [numCotiza]="basicos.numCotiza"
+      (showChange)="cerrarModalPdf($event)">
+</app-modal-pdf>
+
+<app-modal-html
+      class="mt-20"  
+      [show]="showModalInfo"
+      [titulo]="tooltip.titulo"
+      [texto]="tooltip.html"
+      (showChange)="cerrarModalTooltip($event)">
+</app-modal-html>
+
+<form #forma="ngForm" novalidate="">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12 header-form mb-15">
+                Cotización del seguro de casa habitación
+            </div>
+        </div>
+
+        <div class="row border-gray">
+            <div class="col-sm-12 col-md-5 col-lg-5">
+                <table class="table-cotiza textLeft mt-25">
+                    <tr>
+                        <td class="bold textRight">Nombre contratante:</td>
+                        <td>{{basicos.nomContratante+' '+basicos.apeContratante}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold textRight">Estado inmueble:</td>
+                        <td>{{codigoPostal.desEstado}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold textRight">Ciudad inmueble:</td>
+                        <td>{{codigoPostal.desCiudad}}</td>
+                    </tr>
+                    <tr>
+                        <td class="bold textRight">C.P. inmueble:</td>
+                        <td>{{codigoPostal.codPostal}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-2 col-lg-3 textCenter">
+                <app-forma-pago 
+                    ngModel
+                    #forma_pago
+                    [name]="'forma_pago'" 
+                    [label]="'Forma de pago:'" 
+                    [grid]="'col-sm-12 col-md-10 col-lg-10'"  
+                    (radioSelectedEmiter)="formaPagoChange($event)">
+                </app-forma-pago>
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-4 pl-80 mt-25">
+               <a class="left" 
+                   (click)="imprimirCotizacion()"
+                   [ngClass]="{'a-disabled': !(avisoPrivacidad==1?true:false)}">
+                   <i class="fas fa-print fa-lg"></i>
+                   <span class="ml-5">Imprimir cotización</span>
+               </a>
+               <br/>
+               <a *ngIf="showVenta" 
+                   class="left mt-15 mb-15" 
+                   (click)="ventaSeguro()"
+                   [ngClass]="{'a-disabled': !(avisoPrivacidad==1?true:false)}">
+                   <i class="fas fa-money-bill-alt fa-lg"></i>
+                   <span class="ml-5">Venta seguro</span>
+               </a>
+               <br class="clear"/>
+               <label class="left mt-5">Pagos subsecuentes: </label>
+               <app-val-texto 
+                ngModel 
+                #pagos_subsecuentes
+                [name]="'pagos_subsecuentes'"
+                [label]="''"
+                [textoValue]="pagosSubsecuentes"
+                (textoChange)="pagosSubsecuentes = $event"
+                [readonly]="true"
+                [grid]="'col-sm-2 col-md-2 col-lg-2 left padding-0 ml-5'">
+            </app-val-texto>  
+            </div>
+        </div>
+
+        <div class="row textCenter mt-30">
+            <div [ngClass]="{'col-sm-0 col-md-1 col-lg-1' : !bndPagaRenta,
+                             'col-sm-0 col-md-2 col-lg-2' : bndPagaRenta}"></div>
+             <div [ngClass]="{'col-sm-12 col-md-10 col-lg-10' : !bndPagaRenta,
+                              'col-sm-12 col-md-8 col-lg-8' : bndPagaRenta}">
+                <label class="bold">Selecciona la prima total que pagará el cliente (transaccionalidad)</label>
+                <div *ngIf="showRecarcular" class="mt-10"><i class="fas fa-spinner fa-spin mr-10"></i>Recalculando montos...</div>
+                <table class="table mt-10">
+                    <thead>
+                      <tr>
+                        <th class="header-title">
+                            Plan
+                        </th>
+                        <th class="header-title" *ngFor="let opcion of planesRadio">
+                            <label>
+                                <input 
+                                type="radio"  
+                                class="ml-15"
+                                [name]="'plan'" 
+                                [checked]="opcion.selected"
+                                [value]="opcion.value" 
+                                [ngClass]="{'mensajeErrorRadioComponent':error,'radioComponent':true, 'col-sm-1':true}"
+                                (change)="planChange(opcion.value)">
+                                <span class="left ml-10 mt-3 size-12">
+                                    <a (click)="showInfo('plan_'+opcion.value)">{{opcion.label}}</a>
+                                </span>
+                            </label>                     
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="data_row" >
+                          <td class="header-title">
+                            Coberturas opcionales
+                          </td>
+                          <td class="data textLeft" *ngFor="let plan of planeslist">
+                            <div *ngFor="let cobertura of coberturasOpcionaleslist">
+                                <app-cobertura-opcional
+                                    ngModel
+                                    #cobertura_opcional
+                                    *ngIf="plan.valElem == cobertura.nomElem"
+                                    [name] = "'cobertura_opcional'"
+                                    [label]="cobertura.desElem"
+                                    [value]="cobertura.valElem"
+                                    [selected]="cobertura.selected"
+                                    [grid]="'col-sm-12 col-md-12 col-lg-12'"
+                                    (toggle)="coberturaOpcionalChange($event,plan.valElem)">
+                                </app-cobertura-opcional>
+                            </div>
+                          </td>
+                      </tr>
+                      <tr class="data_row" *ngFor="let elem of pagosPlaneslist">
+                            <td class="header-title">
+                              {{elem.nomPago}}
+                            </td>
+                            <td class="data" *ngFor="let deta of elem.elementos">
+                                <app-val-texto 
+                                    ngModel 
+                                    [name]="elem.cvePago+'_'+deta.cvePlan"
+                                    [label]="''"
+                                    [textoValue]="deta.monto"
+                                    (textoChange)="deta.monto = $event"
+                                    [readonly]="true"
+                                    [grid]="'col-sm-12 col-md-12 col-lg-12'">
+                                </app-val-texto>  
+                            </td>
+                        </tr>
+                    </tbody>
+                  </table>
+                  <div *ngIf="bndDescuento" class="textCenter mt-10 mb-30">
+                        <label class="red size-12 bold">* IMPORTANTE:</label>
+                         En la adquisición de este seguro, se obtiene un descuento promocional por:
+                         <p class="bold">
+                              * {{descuento.desOpcion}}
+                         </p>
+                         <p *ngIf="descuento.sMensajeProm != null">
+                            {{descuento.sMensajeProm}}
+                         </p>
+                  </div>
+                  <div class="textCenter mt-10">
+                    <label class="red size-12 bold">LA INFORMACIÓN AQUI PRESENTADA PUEDE VARIAR SIN PREVIO AVISO Y NO CUENTA CON VALIDEZ OFICIAL</label>
+                  </div>
+            </div>
+            <div [ngClass]="{'col-sm-0 col-md-1 col-lg-1' : !bndPagaRenta,
+                             'col-sm-0 col-md-2 col-lg-2' : bndPagaRenta}"></div>
+        </div>
+        
+        
+        <hr class="divisor-horizontal mt-30">
+
+        <div class="row">
+            <div class="textCenter mt-5">
+                <a class="bold" (click)="clickCoberturas()">
+                     COBERTURAS
+                     <i *ngIf="!bndShowCoberturas" class="fas fa-chevron-circle-down ml-3"></i>
+                     <i *ngIf="bndShowCoberturas" class="fas fa-chevron-circle-up ml-3"></i>
+                </a>
+            </div>
+            <div *ngIf="bndShowCoberturas">
+                <div [ngClass]="{'col-sm-0 col-md-1 col-lg-1' : !bndPagaRenta,
+                                'col-sm-0 col-md-2 col-lg-3' : bndPagaRenta}"></div>
+                <div [ngClass]="{'col-sm-12 col-md-10 col-lg-10' : !bndPagaRenta,
+                                'col-sm-12 col-md-8 col-lg-6' : bndPagaRenta}">
+                    <table class="table size-12 mt-10">
+                        <thead>
+                        <tr>
+                            <th class="header-title">
+                                
+                            </th>
+                            <th class="header-title" *ngFor="let opcion of planeslist">
+                                    {{opcion.nomElem}}                     
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="data_row" *ngFor="let cobertura of coberturaslist">
+                            <td class="verticalMiddle">
+                                {{cobertura.nomElem}}
+                            </td>
+                            <td *ngFor="let plan of planeslist">
+                                <ul *ngFor="let detalle of cobertura.elementos">
+                                    <li *ngIf="detalle.cveElem == plan.valElem">
+                                        <a (click)="showInfo(detalle.auxElem)">{{detalle.desElem}}</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div [ngClass]="{'col-sm-0 col-md-1 col-lg-1' : !bndPagaRenta,
+                                'col-sm-0 col-md-2 col-lg-3' : bndPagaRenta}"></div>
+                <div class="textCenter mt-5 size-12 clear">
+                    * Coberturas opcionales
+                </div>
+            </div>
+            
+            <div class="textJustify mt-20 size-12">
+                Declaro conocer y estar de acuerdo con el aviso de privacidad de AXA Seguros, S.A. de C.V. por lo que de conformidad con lo dispuesto por la Ley Federal de Datos Personales en Posesión de los Particulares, autorizo que los datos personales proporcionados en esta solicitud puedan utilizarse para todos los fines del contrato de seguro.
+                <br/>De conformidad con la Ley Federal de Datos Personales en Posesión de los Particulares, otorgo mi consentimiento a AXA Seguros, S.A. de C.V. para que los datos proporcionados para la elaboración de esta cotización sean conservados por un lapso de dos años. Manifiesto que me he enterado que los datos podrán ser almacenados en las oficinas de AXA en México o en cualquier otro lugar del mundo.
+            </div>
+        </div>
+
+        <div class="row mt-15">
+               <p class="float-center-30 bold mt-25">
+                    *Reconozco haber leído el aviso de privacidad y condiciones generales 
+                </p>
+                <app-val-combo 
+                    ngModel
+                    #aviso_privacidad 
+                    [name]="'aviso_privacidad'" 
+                    [label]="''" 
+                    [required]="true" 
+                    (changeValue)="avisoPrivacidad = $event" 
+                    [grid]="'float-center-30 ml-5'">
+                </app-val-combo>   
+        </div>
+        
+        <hr class="divisor-horizontal mt-40">
+
+        <div class="row row_margin">
+
+            <button *ngIf="showVenta" [ngClass]="{'a-disabled': !(avisoPrivacidad==1?true:false)}" class="button button-primary right" (click)="ventaSeguro()">
+                VENTA SEGURO
+            </button>
+            <button class="button button-outline right" (click)="otraCotizacion()">
+                OTRA COTIZACIÓN
+            </button>
+            <button class="button button-outline right" (click)="regresar()">
+                REGRESAR
+            </button>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <app-mensaje-error [mensaje]="mensajeError.mensajeError" [heading]="mensajeError.headingError" [show]="mensajeError.mostrarMensajeError"
+                    (showEvent)="mensajeError.mostrarMensajeError = $event"></app-mensaje-error>
+            </div>
+        </div>
+ 
+    </div>
+</form>
