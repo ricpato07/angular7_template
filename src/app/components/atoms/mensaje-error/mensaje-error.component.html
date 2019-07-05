@@ -1,0 +1,16 @@
+<div class="container errorComponent" *ngIf="show" [@slideInOut]>
+  <div class="row">
+    
+    <div class="col-xs-1" style="text-align: center">
+      <i class="fas fa-exclamation-triangle iconErrorComponent"></i>
+    </div>
+
+    <div class="col-xs-10">
+      <span class="headingErrorComponent">{{heading}}</span> <span class="descriptionErrorComponent"> {{mensaje}} </span>
+    </div>
+
+    <div class="col-xs-1">
+      <span class="closeErrorComponent" (click)="ocultar()">CERRAR</span>
+    </div>
+  </div>
+</div> 
