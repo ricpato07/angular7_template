@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "proyecto-angular6": {
+    "casa-habitacion": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/proyecto-angular6",
+            "outputPath": "dist/casa-habitacion",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
@@ -51,24 +52,48 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "oat": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.oat.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "proyecto-angular6:build"
+            "browserTarget": "casa-habitacion:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "proyecto-angular6:build:production"
+              "browserTarget": "casa-habitacion:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "proyecto-angular6:build"
+            "browserTarget": "casa-habitacion:build"
           }
         },
         "test": {
@@ -102,7 +127,7 @@
         }
       }
     },
-    "proyecto-angular6-e2e": {
+    "casa-habitacion-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +136,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "proyecto-angular6:serve"
+            "devServerTarget": "casa-habitacion:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "proyecto-angular6:serve:production"
+              "devServerTarget": "casa-habitacion:serve:production"
             }
           }
         },
@@ -129,7 +154,42 @@
           }
         }
       }
+    },
+    "hsbc-components-library": {
+      "root": "projects/hsbc-components-library",
+      "sourceRoot": "projects/hsbc-components-library/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/hsbc-components-library/tsconfig.lib.json",
+            "project": "projects/hsbc-components-library/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hsbc-components-library/src/test.ts",
+            "tsConfig": "projects/hsbc-components-library/tsconfig.spec.json",
+            "karmaConfig": "projects/hsbc-components-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/hsbc-components-library/tsconfig.lib.json",
+              "projects/hsbc-components-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "proyecto-angular6"
+  "defaultProject": "casa-habitacion"
 }
