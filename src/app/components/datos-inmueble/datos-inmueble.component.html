@@ -1,0 +1,283 @@
+<ngx-spinner
+  size="medium"
+  color="red"
+  type="ball-grid-pulse">
+  <p style="font-size: 20px; color: white">{{spinner_text}}</p>
+</ngx-spinner>
+
+<app-modal-remodelacion 
+  #modal_remodelacion
+  *ngIf="showModalRemodelacion"
+  [show]="showModalRemodelacion"
+  (showChange)="addTipoRemodelacion($event)">
+</app-modal-remodelacion>
+
+<app-modal-valor-inmueble 
+  #modal_valor_inmueble
+  *ngIf="showModalValorInmueble"
+  [show]="showModalValorInmueble"
+  (showChange)="addValorInmueble($event)">
+</app-modal-valor-inmueble>
+
+<app-modal 
+  #app_modal
+  *ngIf="showModalInfo"
+  [show]="showModalInfo"
+  [texto]="textoModalInfo"
+  (showChange)="cerrarModalInformacion($event)">
+</app-modal>
+
+
+<form #forma="ngForm" novalidate="">    
+ <div class="container">
+  
+  <div class="row">
+      <div class="col-xs-12 header-form mb-15">
+          Características del inmueble asegurado
+      </div>
+  </div>
+
+  <div class="row mb-25">
+    <app-val-combo 
+        ngModel
+        #tipo_vivienda 
+        [label]="'Tipo de vivienda'" 
+        [name]="'tipo_vivienda'" 
+        [required]="true" 
+        (changeValue)="basicos.cveTipovivienda = $event" 
+        [grid]="'col-sm-12 col-md-8 col-lg-4'">
+    </app-val-combo>    
+
+    <app-val-combo 
+      ngModel
+      #descripcion_vivienda
+      [name]="'descripcion_vivienda'"
+      [label]="'Descripción vivienda'" 
+      [required]="true"
+      [grid]="'col-sm-12 col-md-8 col-lg-4'"
+      (changeValue)="basicos.cveVivienda = $event">
+     </app-val-combo>
+
+     <app-val-combo 
+      ngModel
+      #situacion_vivienda
+      [name]="'situacion_vivienda'"
+      [label]="'Situación de la vivienda'" 
+      [required]="true"
+      [grid]="'col-sm-12 col-md-8 col-lg-4'"
+      (changeValue)="basicos.cveFindescan = $event">
+     </app-val-combo>
+
+  </div>
+
+  <div class="row mb-25">
+
+ <app-val-combo 
+      ngModel
+      #tipo_construccion
+      [name]="'tipo_construccion'"
+      [label]="'Tipo de construcción'" 
+      [required]="true"
+      [grid]="'col-sm-12 col-md-8 col-lg-4'"
+      [infoLabel]="'tipcon'"
+      (changeValue)="basicos.cveTipoconst = $event">
+  </app-val-combo>
+
+    <app-val-texto
+        ngModel
+        #num_pisos
+        [name]="'num_pisos'"
+        [label]="'Número de pisos'"
+        [maxlength]="2"
+        [usarExpReg]="true"
+        [textoExpReg]="integer_pattern"
+        [textoValue]="basicos.numPisosinm"
+        (textoChange)="basicos.numPisosinm = $event"
+        [required]="true"
+        [infoLabel]="'numpisos'"
+        [grid]="'col-sm-6 col-md-2 col-lg-2'">
+    </app-val-texto>  
+
+    <app-val-texto 
+        ngModel
+        #num_sotanos
+        [name]="'num_sotanos'"
+        [label]="'Piso'"
+        [maxlength]="2"
+        [usarExpReg]="true"
+        [textoExpReg]="integer_pattern"
+        [textoValue]="basicos.numSotanosinm"
+        (textoChange)="basicos.numSotanosinm = $event"
+        [required]="true"
+        [infoLabel]="'pisos'"
+        [grid]="'col-sm-6 col-md-2 col-lg-2'">
+    </app-val-texto>  
+
+    <div class="col-sm-12 col-md-8 col-lg-4">
+      <app-val-combo 
+        ngModel
+        #irregularidad_planta
+        [name]="'irregularidad_planta'"
+        [label]="'Irregularidad en planta'" 
+        [required]="true"
+        [grid]="'col-sm-12 col-md-12 col-lg-12 padding-0'"
+        [infoLabel]="'susedi'"
+        (changeValue)="irregularidadChange($event)">
+      </app-val-combo>
+      
+      <div class="col-sm-6 col-md-4 col-lg-4 padding-0 mt-15 centro">
+        <img 
+        *ngIf="imgIrregularidad"
+        [src]="imgIrregularidad" 
+        alt="Imagen irregularidad" 
+        class="img-responsive shadow">
+      </div>
+            
+    </div>
+    
+  </div> 
+
+  <div class="row mb-25">
+ 
+    <app-val-combo 
+        ngModel
+        #cercania_mar
+        [name]="'cercania_mar'"
+        [label]="'Cercanía al mar'" 
+        [required]="true"
+        [grid]="'col-sm-12 col-md-12 col-lg-11'"
+        [infoLabel]="'cermar'"
+        (changeValue)="basicos.cerFteBien = $event">
+    </app-val-combo>
+     
+  </div>
+
+ <div class="row mb-25">
+ 
+    <app-val-combo 
+        ngModel
+        #cercania_lago
+        [name]="'cercania_lago'"
+        [label]="'Cercanía a lago, laguna o río'" 
+        [required]="true"
+        [infoLabel]="'cerlago'"
+        [grid]="'col-sm-12 col-md-12 col-lg-8'"
+        (changeValue)="basicos.antDesBien = $event">
+    </app-val-combo>
+     
+  </div>
+
+  <div class="row mb-25">
+ 
+    <app-val-combo 
+        ngModel
+        #cercania_postes
+        [name]="'cercania_postes'"
+        [label]="'Cercanía de postes o anuncios espectaculares'" 
+        [(elementos)]="elementos"
+        [required]="true"
+        [grid]="'col-sm-12 col-md-8 col-lg-4'"
+        [infoLabel]="'cerpos'"
+        (changeValue)="basicos.cerPosBien = $event">
+    </app-val-combo>
+
+    <app-val-combo 
+        ngModel
+        #antiguedad
+        [name]="'antiguedad'"
+        [label]="'Antigüedad'" 
+        [required]="true"
+        [grid]="'col-sm-12 col-md-8 col-lg-4'"
+        (changeValue)="basicos.antEdiBien = $event">
+    </app-val-combo>
+
+    <div class="col-sm-12 col-md-8 col-lg-4">
+        <app-val-combo 
+            ngModel
+            #remodelada
+            [name]="'remodelada'"
+            [label]="'Remodelada'" 
+            [required]="true"
+            [grid]="'col-sm-12 col-md-12 col-lg-12 padding-0'"
+            (changeValue)="basicos.bndRemBien = $event">
+        </app-val-combo>
+        <div class="col-sm-12 col-md-12 col-lg-12 mt-5 padding-0">
+            <a [ngClass]="{'a-disabled': !(basicos.bndRemBien==1?true:false)}" 
+               class="small"
+               (click)="mostrarModalRemodelacion()">
+                Tipo de remodelación
+                <i class="fas fa-edit ml-5"></i>
+            </a>
+        </div>
+    </div>
+  </div>
+
+  <div class="row mb-25">
+
+    <div class="col-sm-11 col-md-3 col-lg-3">
+        <app-val-texto 
+            ngModel
+            #valor_construccion
+            [name]="'valor_construccion'"
+            [label]="bndPagaRenta ?'Valor de los contenidos':'Valor de la construcción'"
+            [maxlength]="10"
+            [usarExpReg]="true"
+            [textoExpReg]="moneda_pattern"
+            [textoValue]="basicos.valorEdificio"
+            (textoChange)="validaConstruccionContenidos($event)"
+            [required]="true"
+            [grid]="'col-sm-12 col-md-12 col-lg-12 padding-0'">
+        </app-val-texto>  
+        <div class="col-sm-12 col-md-12 col-lg-12 mt-5 padding-0">
+            <a *ngIf="!bndPagaRenta" 
+                class="small"
+                (click)="mostrarModalValorInmueble()">
+                Calcular valor aproximado
+                <i class="fas fa-money-bill-alt fa-lg ml-5"></i>
+            </a>
+        </div>
+        
+    </div> 
+
+    <app-val-checkbox
+        ngModel
+        #medidas_seguridad
+        [name] = "'medidas_seguridad'"
+        [label]="'Medidas de seguridad'" 
+        [required]="false"
+        [grid]="'col-sm-12 col-md-8 col-lg-4'"
+        (toggle)="medidasSelected($event)"
+        >
+    </app-val-checkbox>
+
+ </div>
+
+  <hr class="divisor-horizontal mt-40">
+
+    <div class="row row_margin">
+        
+        <button 
+             class="button button-primary right" 
+             (click)="continuar()">
+             CONTINUAR
+        </button>
+        <button 
+            class="button button-outline right" 
+            (click)="regresar()">
+            REGRESAR
+        </button>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <app-mensaje-error
+                [mensaje]="mensajeError.mensajeError"
+                [heading]="mensajeError.headingError"
+                [show]="mensajeError.mostrarMensajeError"
+                (showEvent)="mensajeError.mostrarMensajeError = $event"
+            ></app-mensaje-error>
+        </div>
+    </div>
+        
+</div>  
+</form> 
