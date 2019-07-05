@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "hsbc-components-library": [
+        "dist/hsbc-components-library"
+      ],
+      "hsbc-components-library/*": [
+        "dist/hsbc-components-library/*"
+      ]
+    }
   }
 }
