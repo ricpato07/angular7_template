@@ -1,0 +1,21 @@
+<div [ngClass]="grid">
+    <label for="texto">{{label}}</label>
+    <label *ngIf="required" class="red"> *</label>
+    <br>
+    <div [ngClass]="{'mt-10' : label!=''}"></div>
+    <div [ngClass]="{'mt-5' : label!=''}" *ngFor="let item of options">
+      <label class="checkboxContainer">
+        {{item.label}}
+      <input [name]="name" 
+               type="checkbox" 
+               [(ngModel)]="item.checked"
+               (change)="onToggle()">
+        <span class="checkmark"></span>
+      </label> 
+    </div>
+  
+    <p *ngIf="error" class="mensajeErrorTextoComponent">
+        <i class="fas fa-exclamation-triangle errorIconoTextoComponent"></i>
+        {{mensajeError}}
+    </p>
+  </div>
