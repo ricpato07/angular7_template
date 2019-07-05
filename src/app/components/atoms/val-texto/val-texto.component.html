@@ -1,0 +1,31 @@
+<app-modal-html
+      [show]="showModalInfo"
+      [titulo]="tooltip.titulo"
+      [texto]="tooltip.html"
+      (showChange)="cerrarModalTooltip($event)"
+      >
+</app-modal-html>
+
+<div [ngClass]="grid">
+  <label *ngIf="!showLink && label != ''">{{label}}</label> 
+  <a *ngIf="showLink && label != ''" (click)="showInfo()">{{label}}</a>
+
+  <label *ngIf="required && label != ''" class="red"> *</label>
+  <br *ngIf="label != ''">
+  
+  <input 
+    type="text" 
+    [maxlength]="maxlength" 
+    [name]="name" 
+    [placeholder]="placeholder"
+    [disabled]="deshabilitar"
+    [readonly]="readonly"
+    [ngClass]="{'errorTextoComponent': error,'textoComponent': true}" 
+    [(ngModel)]="textoValue"
+    (input)="onChange($event)"/>
+
+  <p *ngIf="error" class="mensajeErrorTextoComponent">
+      <i class="fas fa-exclamation-triangle errorIconoTextoComponent"></i>
+      {{mensajeError}}
+  </p>
+</div>
