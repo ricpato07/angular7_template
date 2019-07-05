@@ -1,0 +1,28 @@
+<div [ngClass]="grid">
+    <label for="radio">{{label}}</label>
+    <label *ngIf="required" class="red"> *</label>
+    <br>
+
+    <div *ngFor="let opcion of opcionesRadio" class="col-sm-5 mt-5" [ngClass]="{'mensajeErrorRadioComponent' : error}">
+      
+      <label>
+        <input 
+        type="radio"  
+        [name]="name" 
+        [checked]="opcion.selected"
+        [disabled]="deshabilitar"
+        value="{{opcion.value}}" 
+        [ngClass]="{'mensajeErrorRadioComponent':error,'radioComponent':true, 'col-sm-1':true}"
+        (input)="onChange($event)">
+        <span class="col-sm-1">{{opcion.label}}</span>
+      </label>
+    </div>
+
+   <div class="col-sm-12 col-md-12 col-lg-12 padding-0">
+      <p *ngIf="error" class="mensajeErrorTextoComponent">
+        <i class="fas fa-exclamation-triangle errorIconoTextoComponent"></i>
+        {{mensajeError}}
+      </p>
+    </div>
+
+</div>
