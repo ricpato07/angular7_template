@@ -84,7 +84,7 @@ Ctrl + Shift + K
 
 	`npm start`
 
-- Iniciar con ng
+- Iniciar con ng (-o para abrir en el navegador)
 
 	`ng serve`
 
