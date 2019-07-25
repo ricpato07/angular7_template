@@ -568,3 +568,7 @@ https://medium.com/@joeclever/using-multiple-datasources-with-spring-boot-and-sp
 
 https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70dab07417c8
 
+**Encriptar datos**
+
+http://respagblog.azurewebsites.net/guardando-informacion-encriptada-en-sessionstorage-en-una-aplicacion-angular-7/
+
