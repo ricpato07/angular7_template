@@ -218,7 +218,7 @@ let [num_uno,num_dos, num_tres] = avengers;
 
 - pipe fecha
 
-`{{fecha | date:'dd/MM/yyyy'}}`
+`contratante.fecNacimiento | date : 'dd/MM/yyyy': 'GMT+06:00'`
 
 - pipe uppercase
 
