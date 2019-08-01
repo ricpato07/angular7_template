@@ -163,7 +163,11 @@ const userService$ = this.peticionesService.getUsers()
 					console.log("1 - userResult");
 					console.log(userResult);
 					return this.peticionesService.getPhotos();
-				})
+				}),
+				catchError((e) => {
+					console.log("photos error");
+					return of([]);
+				 })
 			)
 
 
