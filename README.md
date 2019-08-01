@@ -573,10 +573,13 @@ https://medium.com/@richardr39/using-angular-cli-to-serve-over-https-locally-70d
 http://respagblog.azurewebsites.net/guardando-informacion-encriptada-en-sessionstorage-en-una-aplicacion-angular-7/
 
 **Callback hell**
+
 https://stackoverflow.com/questions/52415587/how-to-avoid-rxjs-subscribe-callback-hell
 
 **Read local json**
+
 https://stackoverflow.com/questions/47206924/angular-5-service-to-read-local-json-file
 
+**Understanding RxJS map, mergeMap, switchMap and concatMap**
 
-
+https://medium.com/@luukgruijs/understanding-rxjs-map-mergemap-switchmap-and-concatmap-833fc1fb09ff
