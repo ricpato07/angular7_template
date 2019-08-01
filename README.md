@@ -150,13 +150,53 @@ Ctrl + Shift + K
         (keyup.enter)="onEnter()"	
 ```
 
-- Declaración del Otput
+- Declaración del Output
 ```
   @Output() public throttle = new EventEmitter<number>();
 ```
 
+- Ejemplo con switchMap
+```
+const userService$ = this.peticionesService.getUsers()
+			.pipe(
+				switchMap(userResult => {
+					console.log("1 - userResult");
+					console.log(userResult);
+					return this.peticionesService.getPhotos();
+				})
+			)
+
+
+		const photosService = userService$
+			.pipe(
+				switchMap(articulosResult => {
+					console.log("2 - articulosResult");
+					console.log(articulosResult);
+					return this.peticionesService.getPhotos();
+				})
+			)
+
+		const albumService = photosService
+			.pipe(
+				switchMap(photosResult => {
+					console.log("3 - photosResult");
+					console.log(photosResult);
+					return this.peticionesService.getAlbums();
+				})
+			)
+
+
+		albumService.subscribe(albumREsult => {
+			console.log("4 - album");
+			console.log(albumREsult);
+		}, error => {
+			console.log("Error album");
+			console.log(error);
+		})
+```
 
 - Recuperar variables de un objeto
+
 	```
 	public identity={
 		id:1,
