@@ -627,3 +627,8 @@ https://stackoverflow.com/questions/47206924/angular-5-service-to-read-local-jso
 **Understanding RxJS map, mergeMap, switchMap and concatMap**
 
 https://medium.com/@luukgruijs/understanding-rxjs-map-mergemap-switchmap-and-concatmap-833fc1fb09ff
+
+**Angular datapicker material**
+
+https://material.angular.io/components/datepicker/examples
+
