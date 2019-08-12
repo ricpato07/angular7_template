@@ -19,6 +19,8 @@ https://stackoverflow.com/questions/37627197/whats-an-alternative-for-root-scope
 
 - [ ] Animaciones en Angular 7, efecto para el colapsable
 
+- [ ] "@ng-bootstrap/ng-bootstrap": "^4.2.1",
+
 Visual Studio Code
 comentar descomentar
 Ctrl + }
