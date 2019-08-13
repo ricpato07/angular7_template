@@ -31,6 +31,9 @@ Ctrl + Shift + L
 borrar linea
 Ctrl + Shift + K
 
+multicursor
+Ctrl + Alt + flecha arriba / flecha abajo
+
 
 ## Paquetes para Visual studio code ##
 - Terminal - Jun Han
