@@ -324,7 +324,12 @@ let [num_uno,num_dos, num_tres] = avengers;
 	` this.router.navigate(['datos-inmueble']);`
 	
 - Comparar objeto vacío
+
 `Object.entries(obj).length === 0 && obj.constructor === Object`
+
+- NGFor 
+
+`*ngFor="let row of accionistaslist; let i = index"`
 
 **- Configuración del módulo HttpClient**
 
