@@ -144,6 +144,15 @@ Ctrl + Alt + flecha arriba / flecha abajo
 
 ## Código util ## 
 
+-- for con objetos
+
+```
+  for (var i in obj) {
+    resultado += obj_nombre + "." + i + " = " + obj[i] + "<br>";
+  }
+  
+```  
+
 - Parámetros opcionales (no pueden venir los parametros opcionales al principio)
 
 	`ejecuta(nombre:string="Nombre por defecto", apellidos:string, edad?:number)`
