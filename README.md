@@ -144,7 +144,7 @@ Ctrl + Alt + flecha arriba / flecha abajo
 
 ## Código util ## 
 
--- for con objetos
+-- for con Objeto
 
 ```
   for (var i in obj) {
@@ -152,6 +152,14 @@ Ctrl + Alt + flecha arriba / flecha abajo
   }
   
 ```  
+
+-- for con arrays
+
+```
+  for (variable of objeto) {
+    sentencia
+  }
+```
 
 - Parámetros opcionales (no pueden venir los parametros opcionales al principio)
 
