@@ -21,22 +21,25 @@ https://stackoverflow.com/questions/37627197/whats-an-alternative-for-root-scope
 
 - [ ] "@ng-bootstrap/ng-bootstrap": "^4.2.1",
 
-Visual Studio Code
-comentar descomentar
+## Visual Studio Code
+
+comentar descomentar: 
 Ctrl + }
 
-multiselector
+multiselector: 
 Ctrl + Shift + L
 
-borrar linea
+borrar linea: 
 Ctrl + Shift + K
 
-multicursor
+multicursor: 
 Ctrl + Alt + flecha arriba / flecha abajo
 
-Buscar un elemento en el código
-
+Buscar un elemento en el código: 
 Ctrl + Shift + o 
+
+Reemplazar símbolo: 
+F2
 
 ## Paquetes para Visual studio code ##
 - Terminal - Jun Han
