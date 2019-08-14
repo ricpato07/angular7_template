@@ -34,6 +34,9 @@ Ctrl + Shift + K
 multicursor
 Ctrl + Alt + flecha arriba / flecha abajo
 
+Buscar un elemento en el código
+
+Ctrl + Shift + o 
 
 ## Paquetes para Visual studio code ##
 - Terminal - Jun Han
