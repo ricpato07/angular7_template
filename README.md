@@ -669,3 +669,7 @@ https://material.angular.io/components/datepicker/examples
 
 https://github.com/kekeh/mydatepicker
 
+**Permisos archivos y carpetas linux**
+
+http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html
+
