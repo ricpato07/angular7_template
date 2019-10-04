@@ -673,3 +673,7 @@ https://github.com/kekeh/mydatepicker
 
 http://www.ite.educacion.es/formacion/materiales/85/cd/linux/m1/permisos_de_archivos_y_carpetas.html
 
+**Paginacion de tablas**
+
+https://www.freakyjolly.com/angular-7-6-pagination-implement-local-or-server-pagination-in-3-steps/
+
