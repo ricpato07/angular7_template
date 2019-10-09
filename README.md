@@ -296,6 +296,10 @@ let [num_uno,num_dos, num_tres] = avengers;
 
 `{{fecha | uppercase}}`
 
+- pipe moneda
+
+`${{basicos.primaSegunTemp | currency}}`
+
 - Rutas de navegación
 
 - Configurar el archivo app.routing.ts
