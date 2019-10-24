@@ -70,6 +70,14 @@ F2
 - Instalar paquete para desarrollo
 
 	`npm install --save-dev karma`
+  
+ - Instalar paquete con versión en particular
+ 
+ `npm install lodash@4.17.4` 
+ 
+ - Instalar paquete con versión aproximada
+ 
+ `npm install lodash@^4.0.0`
 
 - Desinstalar libreria 
 
