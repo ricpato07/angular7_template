@@ -175,6 +175,12 @@ F2
   }
 ```
 
+-- obtener attributos de un objeto
+
+```
+Object.keys(this.globalParams)
+```
+
 - Parámetros opcionales (no pueden venir los parametros opcionales al principio)
 
 	`ejecuta(nombre:string="Nombre por defecto", apellidos:string, edad?:number)`
