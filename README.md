@@ -161,11 +161,17 @@ F2
 -- for con Objeto
 
 ```
-  for (var i in obj) {
-    resultado += obj_nombre + "." + i + " = " + obj[i] + "<br>";
+  for (var att in this.globalParams) {
+    console.log("atributo:" + att+ " valor: " + this.globalParams[att])
   }
-  
 ```  
+
+-- obtener attributos de un objeto
+
+```
+Object.keys(this.globalParams)
+```
+
 
 -- for con arrays
 
@@ -175,11 +181,7 @@ F2
   }
 ```
 
--- obtener attributos de un objeto
 
-```
-Object.keys(this.globalParams)
-```
 
 - Parámetros opcionales (no pueden venir los parametros opcionales al principio)
 
