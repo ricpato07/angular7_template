@@ -158,6 +158,14 @@ F2
 
 ## Código util ## 
 
+Clone
+
+```
+  clone(object : any):any{
+    return JSON.parse(JSON.stringify(object));
+  }
+```
+
 -- for con Objeto
 
 ```
