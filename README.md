@@ -174,7 +174,7 @@ Clone
   }
 ```  
 
--- obtener attributos de un objeto
+-- obtener attributos de un objeto (regresa las llaves de un objeto)
 
 ```
 Object.keys(this.globalParams)
@@ -189,6 +189,59 @@ Object.keys(this.globalParams)
   }
 ```
 
+Encode Base 64
+
+```
+// Define the string
+var string = 'Hello World!';
+
+// Encode the String
+var encodedString = btoa(string);
+console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+
+// Decode the String
+var decodedString = atob(encodedString);
+console.log(decodedString); // Outputs: "Hello World!"
+```
+
+Borrar elementos de lista (borra directamente en el arreglo original)
+
+```
+array.splice(index, howmany, item1, ....., itemX)
+
+index:	Required. An integer that specifies at what position to add/remove items, Use negative values to specify the position from the end of the array
+howmany:	Optional. The number of items to be removed. If set to 0, no items will be removed
+item1, ..., itemX:	Optional. The new item(s) to be added to the array
+
+```
+
+filter , find
+
+```
+const personas = [
+     {nombre: "Juan", edad: 23, aprendiendo: "Javascript"},
+     {nombre: "Pablo", edad: 18, aprendiendo: "PHP"},
+     {nombre: "Alejandra", edad: 20, aprendiendo: "Adobe"},
+     {nombre: "Karen", edad: 38, aprendiendo: "Python"},
+     {nombre: "Miguel", edad: 35, aprendiendo: "React"}
+]
+
+//regresa arreglo con persona mayores a 28 años
+const mayores = personas.filter(persona =>{
+ return persona.edad > 28;
+}) 
+
+//retorno objeto de Alejandra
+const alejandra = personas.find(persona =>{
+  return persona.nombre === 'Alejandra';
+})
+
+//resgresar la suma de las edades
+let total = personas.reduce((edadtotal,persona)=>{
+  return edadTotal + persona.edad;
+}, 0)
+     
+```
 
 
 - Parámetros opcionales (no pueden venir los parametros opcionales al principio)
