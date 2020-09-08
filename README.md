@@ -6,7 +6,7 @@
 - [Código util](#código-util)
 - [Enlaces externos](#enlaces-externos)
 
-
+https://www.linkedin.com/learning/learning-terraform-2?replacementOf=learning-terraform-2017
 
 ### Puntos pendientes a revisar ###
 - [ ] Revisar ruta componentes en app
