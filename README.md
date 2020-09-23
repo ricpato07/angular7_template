@@ -10,7 +10,7 @@ https://www.linkedin.com/learning/learning-terraform-2?replacementOf=learning-te
 
 https://www.coursera.org/specializations/developing-apps-gcp?utm_source=googlecloud&utm_medium=institutions&utm_campaign=GoogleCloud_Training_AppDev_Specialization
 
-could not calculate build plan: plugin maven-compiler-plugin 3.5.1
+https://gist.github.com/pbrumblay/a467915e87c2d4323c7efd41030e0448
 
 
 ### Puntos pendientes a revisar ###
