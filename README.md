@@ -12,6 +12,8 @@ https://www.coursera.org/specializations/developing-apps-gcp?utm_source=googlecl
 
 https://gist.github.com/pbrumblay/a467915e87c2d4323c7efd41030e0448
 
+Failed to get existing workspaces: querying Cloud Storage failed
+
 
 ### Puntos pendientes a revisar ###
 - [ ] Revisar ruta componentes en app
