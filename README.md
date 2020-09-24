@@ -12,7 +12,8 @@ https://www.coursera.org/specializations/developing-apps-gcp?utm_source=googlecl
 
 https://gist.github.com/pbrumblay/a467915e87c2d4323c7efd41030e0448
 
-Failed to get existing workspaces: querying Cloud Storage failed
+Error: Failed to get existing workspaces: querying Cloud Storage failed: Get https://www.googleapis.com/storage/v1/b/hsbc-10735294-inmx-dev-us-east4-tfbucket/o?alt=json&delimiter=%2F&pageToken=&prefix=terraform%2Fmain-tmfile%2F&prettyPrint=false&projection=full&versions=false: oauth2: cannot fetch token: Post https://oauth2.googleapis.com/token: dial tcp: lookup oauth2.googleapis.com: no such
+host
 
 
 ### Puntos pendientes a revisar ###
