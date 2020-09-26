@@ -15,6 +15,8 @@ https://gist.github.com/pbrumblay/a467915e87c2d4323c7efd41030e0448
 Error: Failed to get existing workspaces: querying Cloud Storage failed: Get https://www.googleapis.com/storage/v1/b/hsbc-10735294-inmx-dev-us-east4-tfbucket/o?alt=json&delimiter=%2F&pageToken=&prefix=terraform%2Fmain-tmfile%2F&prettyPrint=false&projection=full&versions=false: oauth2: cannot fetch token: Post https://oauth2.googleapis.com/token: dial tcp: lookup oauth2.googleapis.com: no such
 host
 
+https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/io/TextIO.Write.html#withHeader-java.lang.String-
+
 
 ### Puntos pendientes a revisar ###
 - [ ] Revisar ruta componentes en app
